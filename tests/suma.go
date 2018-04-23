@@ -1,8 +1,8 @@
 package main
 
-import{
+import (
   "fmt"
-}
+)
 
 func suma(a int,b int) int{
   sum := a + b
