@@ -8,7 +8,6 @@ import (
 
 func sqlConnect(user string, password string, ip string, port string, database string) {
   connString := user+":"+password+"@("+ip+":"+port+"/"+database
-  fmt.Println(connString)
   db, err := sql.Open("mysql", connString)
 	if err != nil {
 		panic(err.Error())
