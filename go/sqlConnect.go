@@ -15,6 +15,3 @@ func sqlConnect(user string, password string, ip string, port string, database s
 	fmt.Println("CONNECTED")
 	defer db.Close()
 }
-func main() {
-  sqlConnect("root","D3m0S14y3c","172.17.2.168","3306","municipios")
-}
