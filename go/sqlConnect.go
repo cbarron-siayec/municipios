@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-  "strings"
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -13,6 +12,7 @@ func sqlConnect(user string, password string, ip string, port string, database s
 	if err != nil {
 		panic(err.Error())
 	}
+	fmt.Println("CONNECTED")
 	defer db.Close()
 }
 func main() {
