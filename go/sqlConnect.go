@@ -16,5 +16,5 @@ func sqlConnect(user string, password string, ip string, port string, database s
 	defer db.Close()
 }
 func main() {
-  sqlConnect(" 172.17.2.168","D3m0S14y3c","municipios")
+  sqlConnect("root","D3m0S14y3c","172.17.2.168","3306","municipios")
 }
