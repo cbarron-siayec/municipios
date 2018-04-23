@@ -1,4 +1,4 @@
-package main
+package sqlConnect
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func sqlConnect(user string, password string, ip string, port string, database string) {
+func SqlConnect(user string, password string, ip string, port string, database string) {
   connString := user+":"+password+"@("+ip+":"+port+"/"+database
   db, err := sql.Open("mysql", connString)
 	if err != nil {
