@@ -11,5 +11,5 @@ func suma(a int,b int) int{
 
 func main(){
   c := suma(1,2)
-  fmt.Println(suma)
+  fmt.Println(c)
 }
