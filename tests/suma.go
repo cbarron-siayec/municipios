@@ -6,6 +6,6 @@ func suma(a int,b int) int{
 }
 
 func main(){
-  c int := suma(1,2)
+  c := suma(1,2)
   fmt.Println(suma)
 }
