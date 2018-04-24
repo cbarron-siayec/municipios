@@ -18,5 +18,5 @@ httpClient := config.Client(oauth1.NoContext, token)
 client := twitter.NewClient(httpClient)
 
 followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
-  fmt.Printl("HOLA")
+  fmt.Println("HOLA")
 }
