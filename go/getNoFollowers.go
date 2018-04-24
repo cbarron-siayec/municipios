@@ -20,6 +20,8 @@ followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
   if err != nil {
     panic(err.Error())
   }
-  fmt.Println(followers)
+  fmt.Println(count(followers))
+  fmt.Println("")
+  fmt.Println("")
   fmt.Println(resp)
 }
