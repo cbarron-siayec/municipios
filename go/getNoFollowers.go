@@ -1,4 +1,4 @@
-package getNoFollower
+package getNumFollowers
 
 import(
   "fmt"
@@ -8,9 +8,9 @@ import(
 
 
 
-func HowManyFollowers(){
-config := oauth1.NewConfig("U93DMt4ydkuj7KjtTQOH3A7DT","dhpyVkyl6pxRDIvGsTcvCAQ9uNP2WJ9iFIAD2FlYCDY29nat1c")
-token := oauth1.NewToken("2253585536-EAQIZqyv9Np8V1fJPcthYlT5TPvpacO0MK209j2", "OCgcI2poX3Y9fSVM0i2D0tWP9PepXmSiNJBRUMqAnmZU0")
+func HowManyFollowers(conumerKey string, consumerSecret string,accessToken string, tokenSecret string){
+config := oauth1.NewConfig(consumerKey,consumerSecret)
+token := oauth1.NewToken(accessToken,tokenSecret)
 // http.Client will automatically authorize Requests
 httpClient := config.Client(oauth1.NoContext, token)
 // Twitter client
