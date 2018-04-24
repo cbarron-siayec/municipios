@@ -8,7 +8,7 @@ import(
 
 
 
-func HowManyFollowers int(consumerKey string, consumerSecret string,accessToken string, tokenSecret string){
+func HowManyFollowers (consumerKey string, consumerSecret string,accessToken string, tokenSecret string){
 config := oauth1.NewConfig(consumerKey,consumerSecret)
 token := oauth1.NewToken(accessToken,tokenSecret)
 // http.Client will automatically authorize Requests
