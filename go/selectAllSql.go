@@ -2,7 +2,7 @@ package main
 
 import(
  "libs/sqlConnect"
- "libs/getNoFollowers"
+ "libs/getNumFollowers"
  "fmt"
 )
 func main(){
