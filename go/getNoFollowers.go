@@ -1,4 +1,4 @@
-package getNoFollowers
+package main
 
 import(
   "fmt"
