@@ -6,7 +6,10 @@ import(
   "github.com/dghubble/oauth1"
 )
 
-config := oauth1.NewConfig("U93DMt4ydkuj7KjtTQOH3A7DT", "dhpyVkyl6pxRDIvGsTcvCAQ9uNP2WJ9iFIAD2FlYCDY29nat1c
+
+
+func main(){
+  config := oauth1.NewConfig("U93DMt4ydkuj7KjtTQOH3A7DT", "dhpyVkyl6pxRDIvGsTcvCAQ9uNP2WJ9iFIAD2FlYCDY29nat1c
 ")
 token := oauth1.NewToken("	2253585536-EAQIZqyv9Np8V1fJPcthYlT5TPvpacO0MK209j2", "OCgcI2poX3Y9fSVM0i2D0tWP9PepXmSiNJBRUMqAnmZU0
 ")
@@ -17,7 +20,5 @@ httpClient := config.Client(oauth1.NoContext, token)
 client := twitter.NewClient(httpClient)
 
 followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
-
-func main(){
   fmt.Printl("HOLA")
 }
