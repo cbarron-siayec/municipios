@@ -7,6 +7,6 @@ import(
 )
 func main(){
   sqlConnect.SqlConnect("root","D3m0S14y3c","172.17.2.168","3306","municipios")
-  numFollowers := getNumFollowers.HowManyFollowers("U93DMt4ydkuj7KjtTQOH3A7DT","dhpyVkyl6pxRDIvGsTcvCAQ9uNP2WJ9iFIAD2FlYCDY29nat1c","2253585536-EAQIZqyv9Np8V1fJPcthYlT5TPvpacO0MK209j2","OCgcI2poX3Y9fSVM0i2D0tWP9PepXmSiNJBRUMqAnmZU0")
+  numFollowers := getNumFollowers.HowManyFollowers("tyI3dExsT4Q5LjiA5Oxs9r2rL","t6d19DqtSo7WjO8ChmX5dab8YOqw2kMv0yPHGW8EoAJYYGzL2i","119620082-ML9vIFx34BrmGNkKiK3scXwHjF7sisPfnwi1XqVs","9jpCnF2ixF8dSlEaJrXyRRHbfhxNOwAekZveDtbAAH2Uw")
  fmt.Println(numFollowers)
 }
