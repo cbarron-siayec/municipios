@@ -21,7 +21,7 @@ followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
     panic(err.Error())
   }
   //https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-followers-list
-  followersName := followers.Users[2]
+  followersName := followers.Users[0][2]
   fmt.Println(followersName)
   fmt.Println("-")
   fmt.Println("-")
