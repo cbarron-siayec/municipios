@@ -24,6 +24,7 @@ followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
   followersNames := followers.users.name
   fmt.Println(followers)
   fmt.Println("")
+  fmt.Println(followersName)
   fmt.Println("")
   fmt.Println(resp)
 }
