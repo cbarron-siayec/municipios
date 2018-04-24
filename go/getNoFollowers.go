@@ -20,7 +20,9 @@ followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
   if err != nil {
     panic(err.Error())
   }
-  fmt.Println(len(followers))
+  //https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-followers-list
+  followersNames := followers.users.name
+  fmt.Println(followers)
   fmt.Println("")
   fmt.Println("")
   fmt.Println(resp)
