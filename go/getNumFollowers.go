@@ -16,7 +16,7 @@ httpClient := config.Client(oauth1.NoContext, token)
 // Twitter client
 client := twitter.NewClient(httpClient)
 
-followers, resp, err := client.Followers.List(&twitter.FollowerListParams{})
+    followers, resp, err := client.Followers.List(&twitter.FollowerListParams{count:5000})
   if err != nil {
     panic(err.Error())
   }
