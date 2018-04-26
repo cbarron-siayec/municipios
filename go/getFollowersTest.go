@@ -14,7 +14,7 @@ func getNumFollowers(consumerKey string, consumerSecret string,accessToken strin
   // Twitter client
   client := twitter.NewClient(httpClient)
   
-   search,resp,err := client.Users.Search("realDonaldTrump",*twitter.UserSearchParams)
+   search,resp,err := client.Users.Search("realDonaldTrump",&twitter.UserSearchParams{Query:"realDonaldTrump"})
     if err != nil {
       panic(err.Error())
     }
