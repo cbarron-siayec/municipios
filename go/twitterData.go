@@ -6,7 +6,7 @@ import(
   "github.com/dghubble/oauth1"
 )
 
-func GetNumFollowers(consumerKey string, consumerSecret string,accessToken string, tokenSecret string,screenName string) int{
+func GetData(consumerKey string, consumerSecret string,accessToken string, tokenSecret string,screenName string) int{
   config := oauth1.NewConfig(consumerKey,consumerSecret)
   token := oauth1.NewToken(accessToken,tokenSecret)
   // http.Client will automatically authorize Requests
