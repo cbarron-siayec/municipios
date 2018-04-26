@@ -29,10 +29,6 @@ func GetData(consumerKey string, consumerSecret string,accessToken string, token
   geoEnabled := show.GeoEnabled
   userId := show.ID
   noListed := show.ListedCount
-  loc := Location
-  statusCount := StatusesCount
-  timeZone := Timezone 
-  url := URL
   if resp == nil {
     fmt.Println("No Response")
   }
