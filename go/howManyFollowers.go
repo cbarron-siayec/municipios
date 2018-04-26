@@ -1,4 +1,4 @@
-package getFollowersTest
+package howManyFollowers
 
 import(
    "fmt"
