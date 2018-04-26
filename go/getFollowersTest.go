@@ -20,7 +20,7 @@ func getNumFollowers(consumerKey string, consumerSecret string,accessToken strin
     }
   
   //https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-followers-list
-  noFollowers := len(show.FollowersCount)
+  noFollowers := show.FollowersCount
   if resp == nil {
     fmt.Println("No Response")
   }
