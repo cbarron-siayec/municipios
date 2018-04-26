@@ -14,7 +14,7 @@ func getNumFollowers(consumerKey string, consumerSecret string,accessToken strin
   // Twitter client
   client := twitter.NewClient(httpClient)
   
-   show,resp,err := client.Users.Show(&twitter.FollowerListParams{ScreenName:"realDonaldTrump"})
+   show,resp,err := client.Users.Show(&twitter.UserShowParams{ScreenName:"realDonaldTrump"})
     if err != nil {
       panic(err.Error())
     }
