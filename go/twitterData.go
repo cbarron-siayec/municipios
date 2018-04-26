@@ -40,9 +40,5 @@ func GetData(consumerKey string, consumerSecret string,accessToken string, token
    fmt.Println(geoEnabled)
    fmt.Println(userId)
    fmt.Println(noListed)
-   fmt.Println(loc)
-   fmt.Println(statusCount)
-   fmt.Println(timeZone)
-   fmt.Println(url)
   return noFollowers
 }
