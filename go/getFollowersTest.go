@@ -14,13 +14,13 @@ func getNumFollowers(consumerKey string, consumerSecret string,accessToken strin
   // Twitter client
   client := twitter.NewClient(httpClient)
   
-   search,resp,err := client.Users.Search("realDonaldTrump",&twitter.UserSearchParams{Query:"realDonaldTrump"})
+   show,resp,err := client.User.Show(&twitter.FollowerListParams{ScreenName:"realDonaldTrump"})
     if err != nil {
       panic(err.Error())
     }
   
   //https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-followers-list
-  noFollowers := len(search.FollowersCount)
+  noFollowers := len(show.FollowersCount)
   if resp == nil {
     fmt.Println("No Response")
   }
