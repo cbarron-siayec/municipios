@@ -32,13 +32,13 @@ func GetData(consumerKey string, consumerSecret string,accessToken string, token
   if resp == nil {
     fmt.Println("No Response")
   }
-   fmt.Println(noFriends)
-   fmt.Println(createdDate)
-   fmt.Println(email)
-   fmt.Println(noFavs)
-   fmt.Println(noFollowing)
-   fmt.Println(geoEnabled)
-   fmt.Println(userId)
-   fmt.Println(noListed)
+  fmt.Println("No Friends: "+noFriends)
+  fmt.Println("Created: "+createdDate)
+  fmt.Println("EMAIL: "+email)
+  fmt.Println("No Favs: "+noFavs)
+  fmt.Println("Following: "+noFollowing)
+  fmt.Println("Geo Enabled: "+geoEnabled)
+   fmt.Println("User ID"+userId)
+  fmt.Println("No Listed: "+noListed)
   return noFollowers
 }
