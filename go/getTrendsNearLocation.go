@@ -2,7 +2,6 @@ package main
 import (
   "fmt"
   "github.com/ChimeraCoder/anaconda"
-  "net/url"
 )
 
 func main(){
