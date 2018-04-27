@@ -7,7 +7,7 @@ import (
 
 func main(){
   
-  config := oauth1.NewConfig("tyI3dExsT4Q5LjiA5Oxs9r2rL","t6d19DqtSo7WjO8ChmX5dab8YOqw2kMv0yPHGW8EoAJYYGzL2")
+  config := oauth1.NewConfig("tyI3dExsT4Q5LjiA5Oxs9r2rL","t6d19DqtSo7WjO8ChmX5dab8YOqw2kMv0yPHGW8EoAJYYGzL2i")
   token := oauth1.NewToken("119620082-ML9vIFx34BrmGNkKiK3scXwHjF7sisPfnwi1XqVs","9jpCnF2ixF8dSlEaJrXyRRHbfhxNOwAekZveDtbAAH2Uw")
   // http.Client will automatically authorize Requests
   httpClient := config.Client(oauth1.NoContext, token)
