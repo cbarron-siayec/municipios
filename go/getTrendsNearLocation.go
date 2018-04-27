@@ -22,4 +22,7 @@ func main(){
       fmt.Println("No Response")
     }
     fmt.Println(trends[0])
+    fmt.Println(trends[1])
+    fmt.Println(trends[2])
+    fmt.Println(trends[3])
 }
