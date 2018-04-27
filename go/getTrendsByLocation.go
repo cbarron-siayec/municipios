@@ -13,7 +13,7 @@ func main(){
   	httpClient := config.Client(oauth1.NoContext, token)
   	// Twitter client
   	client := twitter.NewClient(httpClient)
-	trends,resp,err := client.Trends.SHIT(24550705,&twitter.TrendsPlaceParams{WOEID:24550705})
+	trends,resp,err := client.Trends.Places(24550705,&twitter.TrendsPlaceParams{WOEID:24550705})
 	
     	if err != nil {
       		panic(err.Error())
