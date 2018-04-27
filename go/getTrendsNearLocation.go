@@ -14,7 +14,7 @@ func main(){
   // Twitter client
   client := twitter.NewClient(httpClient)
   
-   trends,resp,err := client.Location.Closest(&twitter.ClosestParams{Lat:19.396224,Long:-99.159049})
+   trends,resp,err := client.Trends.Closest(&twitter.ClosestParams{Lat:19.396224,Long:-99.159049})
     if err != nil {
       panic(err.Error())
     }
