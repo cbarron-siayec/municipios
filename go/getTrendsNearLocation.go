@@ -14,7 +14,7 @@ func main(){
   // Twitter client
   client := twitter.NewClient(httpClient)
   
-  trends,resp,err := client.Trends.Place(&twitter.TrendsPlaceParams{WOEID:24550705})
+  trends,resp,err := client.Trends.Place(&twitter.TrendsPlaceParams{24550705,WOEID:24550705})
     if err != nil {
       panic(err.Error())
     }
