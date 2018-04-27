@@ -11,6 +11,7 @@ func main(){
   api := anaconda.NewTwitterApi("119620082-ML9vIFx34BrmGNkKiK3scXwHjF7sisPfnwi1XqVs","9jpCnF2ixF8dSlEaJrXyRRHbfhxNOwAekZveDtbAAH2Uw")
   v := url.Values{}
   v.Set("exclude", "hastags")
+  v.Del("tweet_mode")
   trends, err := api.GetTrendsByPlace(24550705,v)
   if err != nil {
   	panic(err)
