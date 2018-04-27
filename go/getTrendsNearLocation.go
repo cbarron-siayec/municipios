@@ -6,7 +6,7 @@ import (
 
 func main(){
   api := anaconda.NewTwitterApi("119620082-ML9vIFx34BrmGNkKiK3scXwHjF7sisPfnwi1XqVs","9jpCnF2ixF8dSlEaJrXyRRHbfhxNOwAekZveDtbAAH2Uw")
-  trends, err := api.GetTrendsByPlace(24550705, nil)
+  trends, err := api.GetTrendsAvailableLocations(nil)
   if err != nil {
   	panic(err)
   }
