@@ -12,7 +12,7 @@ func main(){
   v := url.Values{}
   v.Set("exclude", "hastags")
   v.Del("tweet_mode")
-  trends, err := api.GetTrendsByPlace(24550705,v)
+  trends, err := api.GetTrendsByPlace(24550705,v).Del("tweet_mode")
   if err != nil {
   	panic(err)
   }
