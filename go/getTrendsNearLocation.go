@@ -1,17 +1,22 @@
 package main
+
 import (
-  "fmt"
-  "github.com/ChimeraCoder/anaconda"
+	"fmt"
+	"github.com/dghubble/go-twitter/twitter"
+ 	"github.com/dghubble/oauth1"
 )
 
 func main(){
-  anaconda.SetConsumerKey("tyI3dExsT4Q5LjiA5Oxs9r2rL")
-  anaconda.SetConsumerSecret("t6d19DqtSo7WjO8ChmX5dab8YOqw2kMv0yPHGW8EoAJYYGzL2i")
-  api := anaconda.NewTwitterApi("119620082-ML9vIFx34BrmGNkKiK3scXwHjF7sisPfnwi1XqVs","9jpCnF2ixF8dSlEaJrXyRRHbfhxNOwAekZveDtbAAH2Uw")
-  fmt.Println(api)
-  trends, err := api.GetTrendsByPlace(24550705)
-  if err != nil {
-  	panic(err)
-  }
-		fmt.Println(trends)
+	config := oauth1.NewConfig(consumerKey,consumerSecret)
+	token := oauth1.NewToken(accessToken,tokenSecret)
+  	// http.Client will automatically authorize Requests
+  	httpClient := config.Client(oauth1.NoContext, token)
+  	// Twitter client
+  	client := twitter.NewClient(httpClient)
+	
+	resp,err := client.Trends.Place(24550705,&twitter.TrendsPlaceParams{WOEID:24550705})
+    	if err != nil {
+      		panic(err.Error())
+    	}
+	fmt.Println(resp)		
 }
