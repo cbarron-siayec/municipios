@@ -10,8 +10,8 @@ func main(){
   if err != nil {
 	  panic(err.Error())
   }
-  for page := range trends {
+  for page := range trends.Trends {
 		//Print the current page of followers
-		fmt.Println(page.Followers)
-	}
+		fmt.Println(page)
+  }
 }
