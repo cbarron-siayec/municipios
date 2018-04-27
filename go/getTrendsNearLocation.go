@@ -18,8 +18,9 @@ func main(){
     if err != nil {
       panic(err.Error())
     }
-    if resp != nil {
-      fmt.Println("No Response")
-    }
+    
+    fmt.Println(resp)
+    fmt.Println("------")
+    fmt.Println("TRENDS")
     fmt.Println(trends[0])
 }
