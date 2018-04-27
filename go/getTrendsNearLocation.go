@@ -10,7 +10,7 @@ func main(){
   if err != nil {
   	panic(err)
   }
-  for page := range trends.Trends {
+  for page := range trends.Woeid {
 		fmt.Println(page)
   }
 }
