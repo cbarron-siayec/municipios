@@ -29,6 +29,7 @@ func GetData(consumerKey string, consumerSecret string,accessToken string, token
   geoEnabled := show.GeoEnabled
   userId := show.ID
   noListed := show.ListedCount
+  noTweets := show.StatusesCount
   if resp == nil {
     fmt.Println("No Response")
   }
@@ -48,5 +49,8 @@ func GetData(consumerKey string, consumerSecret string,accessToken string, token
   fmt.Println(userId)
   fmt.Println("No Listed: ")
   fmt.Println(noListed)
+  fmt.Println("No Tweets: ")
+  fmt.Println(noTweets)
+  fmt.Println("No Followers: ")
   return noFollowers
 }
