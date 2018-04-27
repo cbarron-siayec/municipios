@@ -14,7 +14,7 @@ func main(){
   // Twitter client
   client := twitter.NewClient(httpClient)
   
-   trends,resp,err := client.Trends.Closest(&twitter.ClosestParams{Lat:19.396224,Long:-99.159049})
+   trends,resp,err := client.Trends.Closest(&twitter.ClosestParams{Lat:40.758847,Long:-73.984889})
     if err != nil {
       panic(err.Error())
     }
@@ -22,7 +22,4 @@ func main(){
       fmt.Println("No Response")
     }
     fmt.Println(trends[0])
-    fmt.Println(trends[1])
-    fmt.Println(trends[2])
-    fmt.Println(trends[3])
 }
