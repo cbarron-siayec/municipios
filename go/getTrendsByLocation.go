@@ -24,6 +24,6 @@ func main(){
 	for i:=0;i<=len(trends);i++ {
 		fmt.Println(i)
 		fmt.Println(":")
-		fmt.Println(i+trends[i])
+		fmt.Println(trends[i])
 	}
 }
