@@ -21,7 +21,7 @@ func main(){
 	if resp != nil {
 		fmt.Println(resp)
     	}
-	for i:=0;i<=len(trend);i++ {
-		fmt.Println(trendList.Trends[i])
+	for i:=0;i<=len(trends);i++ {
+		fmt.Println(trend.Trends[i])
 	}
 }
