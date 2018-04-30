@@ -4,7 +4,6 @@ import (
   "fmt"
   "github.com/go-sql-driver/mysql"
   "database/sql"
-  "libs/sqlConnect"
 )
 
 func main(){
@@ -15,7 +14,7 @@ func main(){
         }
         fmt.Println("CONNECTED")
         defer db.Close()
-        stmt, err := sqlConnect.db.Prepare("INSERT twitterData SET idCandidatos=?,friends=?,favorites=?,followers=?,lists=?,favorites=?,tweets=?")
+        stmt, err := db.Prepare("INSERT twitterData SET idCandidatos=?,friends=?,favorites=?,followers=?,lists=?,favorites=?,tweets=?")
         checkErr(err)
 
         res, err := stmt.Exec(1,1,1,1,1,1,1)
