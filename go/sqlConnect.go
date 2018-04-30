@@ -9,9 +9,9 @@ import (
 func SqlConnect(user string, password string, ip string, port string, database string) {
   connString := user+":"+password+"@("+ip+":"+port+"/"+database
   DB, ERR := sql.Open("mysql", connString)
-	if err != nil {
-		panic(err.Error())
+	if ERR != nil {
+		panic(ERR.Error())
 	}
 	fmt.Println("CONNECTED")
-	defer db.Close()
+	defer DB.Close()
 }
