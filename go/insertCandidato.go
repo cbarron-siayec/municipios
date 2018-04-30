@@ -2,7 +2,7 @@ package main
 
 import (
   "fmt"
-  "github.com/go-sql-driver/mysql"
+  _ "github.com/go-sql-driver/mysql"
   "database/sql"
 )
 
@@ -15,12 +15,18 @@ func main(){
         fmt.Println("CONNECTED")
         defer db.Close()
         stmt, err := db.Prepare("INSERT twitterData SET idCandidatos=?,friends=?,favorites=?,followers=?,lists=?,favorites=?,tweets=?")
-        checkErr(err)
+        if err != nil {
+            panic(err.Error())
+        }
 
         res, err := stmt.Exec(1,1,1,1,1,1,1)
-        checkErr(err)
+        if err != nil {
+            panic(err.Error())
+        }
 
         id, err := res.LastInsertId()
-        checkErr(err)
+        if err != nil {
+            panic(err.Error())
+        }
         fmt.Printls(id)
 }
