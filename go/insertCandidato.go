@@ -1,4 +1,4 @@
-package main
+package insertCandidato
 
 import (
   "fmt"
@@ -6,7 +6,7 @@ import (
   "database/sql"
 )
 
-func main(){
+func InsertCandidato(idCandidato int,friends int, favorites int, followers int, lists int, tweets int){
         connString := "root:D3m0S14y3c@(172.17.2.168:3306)/candidatos"
         db, err := sql.Open("mysql", connString)
         if err != nil {
@@ -19,7 +19,7 @@ func main(){
             panic(err.Error())
         }
 
-        res, err := stmt.Exec(1,1,1,1,1,1)
+        res, err := stmt.Exec(idCandidato,friends,favorites,followers,lists,tweets)
         if err != nil {
             panic(err.Error())
         }
