@@ -1,0 +1,5 @@
+package selectAllFromTable
+
+import (
+  "fmt"
+)
