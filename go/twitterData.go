@@ -13,8 +13,8 @@ type User struct {
 	ID                             int64         `json:"id"`
 	ScreenName                     string        `json:"screen_name"`
 	StatusesCount                  int           `json:"statuses_count"`
-	ListCount		       int	     'json:list_count'
-	IDCandidato		       int	     'json:IDCandidato'
+	noTweets		       int	     'json:"list_count"'
+	IDCandidato		       int	     'json:"IDCandidato"'
 }
 
 func GetData(consumerKey string, consumerSecret string,accessToken string, tokenSecret string,screenName string, idCandidato int) User{
