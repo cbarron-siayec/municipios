@@ -12,7 +12,7 @@ type User struct {
 	FriendsCount                   int           `json:"friends_count"`
 	ID                             int64         `json:"id"`
 	ScreenName                     string        `json:"screen_name"`
-	NoTweets                  int           `json:"statuses_count"`
+	NoTweets                       int           `json:"tweet_count"`
 	ListCount		       int	     'json:"list_count"'
 	IDCandidato		       int	     'json:"IDCandidato"'
 }
@@ -31,7 +31,7 @@ func GetData(consumerKey string, consumerSecret string,accessToken string, token
     }
   
   //https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-followers-list 
-  twitterInfo := User{FavouritesCount: show.FavouritesCount, FollowersCount: show.FollowersCount,FriendsCount:show.FriendsCount,ScreenName:show.ScreenName,ID:show.ID,ListCount:show.ListedCount,noTweets:show.StatusesCount,IDCandidato:idCandidato}
+  twitterInfo := User{FavouritesCount: show.FavouritesCount, FollowersCount: show.FollowersCount,FriendsCount:show.FriendsCount,ScreenName:show.ScreenName,ID:show.ID,ListCount:show.ListedCount,NoTweets:show.StatusesCount,IDCandidato:idCandidato}
   if resp == nil {
     fmt.Println("No Response")
   }
