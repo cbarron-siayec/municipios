@@ -12,8 +12,8 @@ type User struct {
 	FriendsCount                   int           `json:"friends_count"`
 	ID                             int64         `json:"id"`
 	ScreenName                     string        `json:"screen_name"`
-	StatusesCount                  int           `json:"statuses_count"`
-	noTweets		       int	     'json:"list_count"'
+	NoTweets                  int           `json:"statuses_count"`
+	ListCount		       int	     'json:"list_count"'
 	IDCandidato		       int	     'json:"IDCandidato"'
 }
 
