@@ -17,5 +17,16 @@ func main() {
 	fmt.Println(jamk)
 	fmt.Println(mz)
 	fmt.Println(bronco)
-	insertCandidato.InsertCandidato(1,1,1,1,1,1)
+	// ORDEEN INSERT CANDIDATO: idCandidato int,friends int, favorites int, followers int, lists int, tweets int
+	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
+	//PARA AMLO
+	insertCandidato.InsertCandidato(amlo.IDCandidato,amlo.FriendsCount,amlo.FavouritesCount,amlo.FollowersCount,amlo.ListCount,amlo.NoTweets)
+	//PARA RAC
+	insertCandidato.InsertCandidato(rac.IDCandidato,rac.FriendsCount,rac.FavouritesCount,rac.FollowersCount,rac.ListCount,rac.NoTweets)
+	//PARA JAMK
+	insertCandidato.InsertCandidato(jamk.IDCandidato,jamk.FriendsCount,jamk.FavouritesCount,jamk.FollowersCount,jamk.ListCount,jamk.NoTweets)
+	//PARA MZ
+	insertCandidato.InsertCandidato(mz.IDCandidato,mz.FriendsCount,mz.FavouritesCount,mz.FollowersCount,mz.ListCount,mz.NoTweets)
+	//PARA BRONCO
+	insertCandidato.InsertCandidato(bronco.IDCandidato,bronco.FriendsCount,bronco.FavouritesCount,bronco.FollowersCount,bronco.ListCount,bronco.NoTweets)
 }
