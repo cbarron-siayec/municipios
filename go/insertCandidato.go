@@ -2,8 +2,8 @@ package main
 
 import (
   "fmt"
-  _ "github.com/go-sql-driver/mysql"
-  _ "database/sql"
+  "github.com/go-sql-driver/mysql"
+  "database/sql"
   "libs/sqlConnect"
 )
 
