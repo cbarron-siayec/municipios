@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"libs/twitterData"
+	"libs/insertCandidato"
 )
 
 func main() {
@@ -16,4 +17,5 @@ func main() {
 	fmt.Println(jamk)
 	fmt.Println(mz)
 	fmt.Println(bronco)
+	insertCandidato.InsertCandidato(1,1,1,1,1,1)
 }
