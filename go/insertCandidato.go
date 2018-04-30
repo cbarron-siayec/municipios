@@ -14,12 +14,12 @@ func main(){
         }
         fmt.Println("CONNECTED")
         defer db.Close()
-        stmt, err := db.Prepare("INSERT twitterData SET idCandidatos=?,friends=?,favorites=?,followers=?,lists=?,favorites=?,tweets=?")
+        stmt, err := db.Prepare("INSERT twitterData SET idCandidatos=?,friends=?,favorites=?,followers=?,lists=?,tweets=?")
         if err != nil {
             panic(err.Error())
         }
 
-        res, err := stmt.Exec(1,1,1,1,1,1,1)
+        res, err := stmt.Exec(1,1,1,1,1,1)
         if err != nil {
             panic(err.Error())
         }
