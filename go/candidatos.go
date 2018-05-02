@@ -15,5 +15,5 @@ func runIndex(w http.ResponseWriter, r *http.Request){
 
 func main(){
   http.HandleFunc("/",runIndex)
-  http.ListenAndServer(:80,nil)
+  http.ListenAndServer(":80",nil)
 }
