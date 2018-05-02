@@ -8,7 +8,6 @@ import (
 func main() {
 	test := getAllCandidatesTwitterData.GetAllCandidatesTwitterData()
 	for i:= 0;i<len(test.IDTransaccion);i++{
-		fmt.Println(i)
 		fmt.Println(test.IDTransaccion[i])
 		fmt.Println(test.IDCandidato[i])
 		fmt.Println(test.FriendsCount[i])
