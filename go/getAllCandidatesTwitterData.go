@@ -53,4 +53,5 @@ func GetAllCandidatesTwitterData() TwitterUser {
 
 func main() {
 	fmt.Println("OK")
+	GetAllCandidatesTwitterData()
 }
