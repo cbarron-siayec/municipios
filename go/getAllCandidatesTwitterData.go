@@ -41,7 +41,7 @@ func GetAllCandidatesTwitterData() TwitterUser {
 	var resultsTwitterUser TwitterUser
 	for results.Next() {
 		// for each row, scan the result into our tag composite object
-		err = results.Scan(resultsTwitterUser.IDTransaccion[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.IDCandidato.FriendsCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.FavouritesCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.FollowersCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.ListCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.NoTweets[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.Date[resultsTwitterUser.IDTransaccion])
+		err = results.Scan(resultsTwitterUser.IDTransaccion[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.IDCandidato[resultsTwitterUser.IDTransaccion],&resultsTwitterUser.FiendsCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.FavouritesCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.FollowersCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.ListCount[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.NoTweets[resultsTwitterUser.IDTransaccion], &resultsTwitterUser.Date[resultsTwitterUser.IDTransaccion])
 		if err != nil {
 			panic(err.Error()) // proper error handling instead of panic in your app
 		}
