@@ -53,5 +53,5 @@ func GetAllCandidatesTwitterData() TwitterUser {
 
 func main() {
 	test := GetAllCandidatesTwitterData()
-	fmt.Println(test.FollowersCount[0])
+	fmt.Println(test.FollowersCount)
 }
