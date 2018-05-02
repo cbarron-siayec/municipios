@@ -2,9 +2,6 @@ package getAllCandidatesTwitterData
 
 import (
 	"database/sql"
-	"fmt"
-	_ "log"
-
 	_ "github.com/go-sql-driver/mysql"
 )
 
