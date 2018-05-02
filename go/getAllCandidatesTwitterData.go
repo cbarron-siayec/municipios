@@ -10,19 +10,19 @@ import (
 
 //Structure passed from database
 type TwitterUser struct {
-	FavouritesCount int[]    `json:"favourites_count"`
-	FollowersCount  int[]    `json:"followers_count"`
-	FriendsCount    int[]    `json:"friends_count"`
-	ID              int64[]  `json:"id"`
-	ScreenName      string[] `json:"screen_name"`
-	NoTweets        int[]    `json:"tweet_count"`
-	ListCount       int[]    `json:"list_count"`
-	IDCandidato     int[]    `json:"id_candidato"`
-	Date            string[] `json:"fecha"`
-	IDTransaccion   int[]    `json:"id_transaccion"`
+	FavouritesCount int    `json:"favourites_count"`
+	FollowersCount  int    `json:"followers_count"`
+	FriendsCount    int    `json:"friends_count"`
+	ID              int64  `json:"id"`
+	ScreenName      string `json:"screen_name"`
+	NoTweets        int    `json:"tweet_count"`
+	ListCount       int    `json:"list_count"`
+	IDCandidato     int    `json:"id_candidato"`
+	Date            string `json:"fecha"`
+	IDTransaccion   int    `json:"id_transaccion"`
 }
 
-func GetAllCandidatesTwitterData() TwitterUser {
+func GetAllCandidatesTwitterData() []TwitterUser {
 	// Open up our database connection.
 	connString := "root:D3m0S14y3c@(172.17.2.168:3306)/candidatos"
 	db, err := sql.Open("mysql", connString)
@@ -54,7 +54,7 @@ func GetAllCandidatesTwitterData() TwitterUser {
 
 func main() {
 	results := GetAllCandidatesTwitterData()
-	fmt.Println(results.IDCandidato)
-	fmt.Println(results.FollowersCount)
-	fmt.Println(results.Date)
+	fmt.Println(results[0].IDCandidato)
+	fmt.Println(results[0].FollowersCount)
+	fmt.Println(results[0].Date)
 }
