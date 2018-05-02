@@ -1,4 +1,4 @@
-package main
+package getAllCandidatesTwitterData
 
 import (
 	"database/sql"
@@ -58,12 +58,4 @@ func GetAllCandidatesTwitterData() TwitterUser {
 		resultsTwitterUser.Date = append(resultsTwitterUser.Date,fecha)
 	}
 	return resultsTwitterUser
-}
-
-func main() {
-	results := GetAllCandidatesTwitterData()
-	numRecords := len(results.IDTransaccion)
-	for i:= 0;i<numRecords;i++{
-		fmt.Println(results.Date[i])
-	}
 }
