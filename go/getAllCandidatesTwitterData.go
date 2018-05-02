@@ -38,9 +38,8 @@ func GetAllCandidatesTwitterData() []TwitterUser {
 	}
 	// ORDEEN INSERT CANDIDATO: idCandidato int,friends int, favorites int, followers int, lists int, tweets int
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
-	var resultsTwitterUser TwitterUser
-	var int i = 0
-	for results.Next() {
+	var resultsTwitterUser []TwitterUser
+	for i:= o,results.Next() {
 		// for each row, scan the result into our tag composite object
 		err = results.Scan(&resultsTwitterUser[i].IDTransaccion, &resultsTwitterUser[i].IDCandidato[i], &resultsTwitterUser[i].FriendsCount, &resultsTwitterUser[i].FavouritesCount, &resultsTwitterUser[i].FollowersCount, &resultsTwitterUser[i].ListCount, &resultsTwitterUser[i].NoTweets, &resultsTwitterUser[i].Date)
 		if err != nil {
