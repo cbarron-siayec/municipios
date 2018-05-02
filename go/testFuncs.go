@@ -18,6 +18,5 @@ type TwitterUser struct {
 }
 
 func main() {
-	var test TwitterUser
-	test = getAllCandidatesTwitterData.GetAllCandidatesTwitterData()
+	test := getAllCandidatesTwitterData.GetAllCandidatesTwitterData()
 }
