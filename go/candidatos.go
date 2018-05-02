@@ -12,7 +12,6 @@ func runIndex(w http.ResponseWriter, r *http.Request){
   index, err := template.ParseFiles("static/graficos.html")
   fmt.Println(err)
   fmt.Println(index.Execute(w,twitterInfo))
-  index.Execute(w,twitterInfo)
 }
 
 func main(){
