@@ -6,10 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Analíticos de candidatos presidenciales." name="description">
     <meta content="Grupo SIAYEC: Saúl Zamora / Carlos Barrón" name="author">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="././js/style.css">
+
+	<style type="text/css">
+		.mifecha {
+		   background-color: #0000;
+		   padding: 3px;
+		   width: 110px;
+		   text-align: center;
+		   font-family:verdana, arial;
+		   font-size: 12pt;
+		}
+		.mifecha .ano{
+		   background-color: #6C6969;
+		   padding: 2px;
+		   font-size: 100%;
+		   margin-bottom: 3px;
+		   color: #fff;
+		   letter-spacing: 3px;
+		   font-weight: bold;
+		}
+		.mifecha .dia{
+		   background-color: #3A8CD1;
+		   font-size: 300%;
+		   padding: 5px 8px;
+			 color: #fff;
+		   margin-bottom: 3px;
+		   font-weight: bold;
+		}
+		.mifecha .mes{
+		   background-color: #6C6969;
+		   font-size: 80%;
+		   padding: 2px;
+		   color: #fff;
+		   font-weight: bold;
+		}
+	</style>
+
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <title> Candidatos Presidenciales 1234 </title>
-  </head>
+
+
+
+	  <style>
+			canvas{
+			}
+		</style>
+ </head>
   <body>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -30,12 +77,96 @@
               </div>
             </div>
             <div class="col">
-              hola
+
+
+				<div class="wrapper">
+      <h1>World population over time</h1>
+      <h2>Number of people (in millions) living on earth, the last 500 years</h2>
+
+      <canvas id="myChart" width="800" height="500"></canvas>
+    </div>
+
+
+
+
+	<script>
+
+		var years = [100,200,1700,1750,1800,1850,1900,1950,1999,2050];
+// For drawing the lines
+var AMLO = [86,114,106,106,107,111,133,221,783,2478];
+var ANAYA = [282,350,411,502,635,809,947,1302,1700,2267];
+var MEADE = [168,170,178,190,203,276,408,547,675,734];
+var BRONCO = [40,20,10,16,24,38,74,167,508,784];
+var MARGARITA = [6,3,2,2,7,26,82,172,312,433];
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        data: AMLO,
+        label: "AMLO",
+        borderColor: "#3e95cd",
+        fill: false
+      },
+      {
+        data: ANAYA,
+        label: "ANAYA",
+        borderColor: "#8e5ea2",
+        fill: false
+      },
+      {
+        data: MEADE,
+        label: "MEADE",
+        borderColor: "#3cba9f",
+        fill: false
+      },
+      {
+        data: BRONCO,
+        label: "BRONCO",
+        borderColor: "#e8c3b9",
+        fill: false
+      },
+      {
+        data: MARGARITA,
+        label: "MARGARITA",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  }
+});
+	</script>
+
             </div>
           </div>
         </div>
+
+
         <div class="col-4">
-          SEGUNDA COLUMNA
+
+			<script>
+			    var f=new Date();
+			     var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+					document.write('<div class="mifecha">');
+					document.write('<div class="ano">' + f.getFullYear() + '</div>');
+					document.write('<div class="dia">' + f.getDate() + '</div>');
+					document.write('<div class="mes">' + meses[f.getMonth()] + '</div>');
+					document.write('</div>');
+			</script>
+
+			<script language="javascript">
+				  var Hoy=new Date()
+				  var Nav=new Date(Hoy.getFullYear(), 06, 01)
+				  var mseg_dia=1000*60*60*24
+				  var dias
+				  if (Hoy.getMonth()==06 && Hoy.getDate()>01)
+					  Nav.setFullYear(Nav.getFullYear()+1)
+				  dias = Math.ceil((Nav.getTime()-Hoy.getTime())/(mseg_dia))
+				  document.write("Quedan "+dias+" días para la elección")
+			</script>
         </div>
       </div>
     </div>
