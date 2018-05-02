@@ -40,12 +40,22 @@ func GetAllCandidatesTwitterData() TwitterUser {
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
 	var resultsTwitterUser TwitterUser
 	for results.Next() {
+		var idtransaccion,idcandidatos,friends,favorites,followers,lists,tweets int
+		var fecha string
 		// for each row, scan the result into our tag composite object
-		err = results.Scan(&resultsTwitterUser.IDTransaccion[0], &resultsTwitterUser.IDCandidato[0],&resultsTwitterUser.FriendsCount[0], &resultsTwitterUser.FavouritesCount[0], &resultsTwitterUser.FollowersCount[0], &resultsTwitterUser.ListCount[0], &resultsTwitterUser.NoTweets[0], &resultsTwitterUser.Date[0])
+		err = results.Scan(&idtransaccion,&idcandidatos,&friends,&favorites,&followers,&lists,&tweets,&fecha)
 		if err != nil {
 			panic(err.Error()) // proper error handling instead of panic in your app
 		}
-		// and then print out the tag's Name attribute
+		
+		resultsTwitterUser.IDTransaccion = append(resultsTwitterUser.IDTransaccion,idtransaccion)
+		resultsTwitterUser.IDCandidato = append(resultsTwitterUser.IDCandidato,idcandidatos)
+		resultsTwitterUser.FriendsCount = append(resultsTwitterUser.FriendsCount,friends)
+		resultsTwitterUser.FavouritesCount = append(resultsTwitterUser.FavouritesCount,favorites)
+		resultsTwitterUser.FollowersCount = append(resultsTwitterUser.FollowersCount,followers)
+		resultsTwitterUser.ListCount = append(resultsTwitterUser.ListCount,lists)
+		resultsTwitterUser.NoTweets = append(resultsTwitterUser.NoTweets,tweets)
+		resultsTwitterUser.Date = append(resultsTwitterUser.Date,fecha)
 	}
 	return resultsTwitterUser
 }
