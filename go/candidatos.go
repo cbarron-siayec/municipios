@@ -9,7 +9,7 @@ import(
 
 func runIndex(w http.ResponseWriter, r *http.Request){
   twitterInfo := getAllCandidatesTwitterData.GetAllCandidatesTwitterData()
-  index, err := template.ParseFiles("static/quetransa.html")
+  index, err := template.ParseFiles("static/graficos.html")
   if err != nil{
     panic(err.Error())
   }
