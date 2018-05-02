@@ -10,16 +10,16 @@ import (
 
 //Structure passed from database
 type TwitterUser struct {
-	FavouritesCount int    `json:"favourites_count"`
-	FollowersCount  int    `json:"followers_count"`
-	FriendsCount    int    `json:"friends_count"`
-	ID              int64  `json:"id"`
-	ScreenName      string `json:"screen_name"`
-	NoTweets        int    `json:"tweet_count"`
-	ListCount       int    `json:"list_count"`
-	IDCandidato     int    `json:"id_candidato"`
-	Date            string `json:"fecha"`
-	IDTransaccion   int    `json:"id_transaccion"`
+	FavouritesCount int[]    `json:"favourites_count"`
+	FollowersCount  int[]    `json:"followers_count"`
+	FriendsCount    int[]    `json:"friends_count"`
+	ID              int64[]  `json:"id"`
+	ScreenName      string[] `json:"screen_name"`
+	NoTweets        int[]    `json:"tweet_count"`
+	ListCount       int[]    `json:"list_count"`
+	IDCandidato     int[]    `json:"id_candidato"`
+	Date            string[] `json:"fecha"`
+	IDTransaccion   int[]    `json:"id_transaccion"`
 }
 
 func GetAllCandidatesTwitterData() TwitterUser {
@@ -39,13 +39,15 @@ func GetAllCandidatesTwitterData() TwitterUser {
 	// ORDEEN INSERT CANDIDATO: idCandidato int,friends int, favorites int, followers int, lists int, tweets int
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
 	var resultsTwitterUser TwitterUser
+	var int i = 0
 	for results.Next() {
 		// for each row, scan the result into our tag composite object
-		err = results.Scan(&resultsTwitterUser.IDTransaccion, &resultsTwitterUser.IDCandidato, &resultsTwitterUser.FriendsCount, &resultsTwitterUser.FavouritesCount, &resultsTwitterUser.FollowersCount, &resultsTwitterUser.ListCount, &resultsTwitterUser.NoTweets, &resultsTwitterUser.Date)
+		err = results.Scan(&resultsTwitterUser[i].IDTransaccion, &resultsTwitterUser[i].IDCandidato[i], &resultsTwitterUser[i].FriendsCount, &resultsTwitterUser[i].FavouritesCount, &resultsTwitterUser[i].FollowersCount, &resultsTwitterUser[i].ListCount, &resultsTwitterUser[i].NoTweets, &resultsTwitterUser[i].Date)
 		if err != nil {
 			panic(err.Error()) // proper error handling instead of panic in your app
 		}
 		// and then print out the tag's Name attribute
+		i++
 	}
 	return resultsTwitterUser
 }
