@@ -46,12 +46,12 @@ func GetAllCandidatesTwitterData() TwitterUser {
 			panic(err.Error()) // proper error handling instead of panic in your app
 		}
 		// and then print out the tag's Name attribute
-		log.Println(resultsTwitterUser.FollowersCount)
+		fmt.Println(resultsTwitterUser.FollowersCount)
 	}
 	return resultsTwitterUser
 }
 
 func main() {
 	test := GetAllCandidatesTwitterData()
-	fmt.Println(test.FollowersCount)
+	fmt.Println(test.FollowersCount[0])
 }
