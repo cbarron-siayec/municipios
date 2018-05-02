@@ -1,7 +1,8 @@
-package getAllCandidatesTwitterData
+package main
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -48,4 +49,9 @@ func GetAllCandidatesTwitterData() TwitterUser {
 		log.Println(resultsTwitterUser.FollowersCount)
 	}
 	return resultsTwitterUser
+}
+
+func main() {
+	test := GetAllCandidatesTwitterData()
+	fmt.Println(test.FollowersCount)
 }
