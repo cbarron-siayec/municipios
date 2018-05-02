@@ -62,7 +62,7 @@ func GetAllCandidatesTwitterData() TwitterUser {
 
 func main() {
 	results := GetAllCandidatesTwitterData()
-	numRecords := len(resultsTwitterUser.IDTransaccion)
+	numRecords := len(results.IDTransaccion)
 	for i:= 0;i<=numRecords;i++{
 		fmt.Println(results.Date[i])
 	}
