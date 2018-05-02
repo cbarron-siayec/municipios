@@ -3,7 +3,7 @@ package main
 import(
   "fmt"
   "net/http"
-  "html/tmeplate"
+  "html/template"
    "libs/getAllCandidatesTwitterData"
 )
 
