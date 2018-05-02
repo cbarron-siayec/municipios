@@ -7,5 +7,6 @@ import (
 
 func main() {
 	test := getAllCandidatesTwitterData.GetAllCandidatesTwitterData()
-	fmt.Println(test)
+	fmt.Println(test.FollowersCount)
+	fmt.Println(test.FriendsCount)
 }
