@@ -1,7 +1,7 @@
 package main
 
 import(
-  "fmt"
+  _ "fmt"
   "net/http"
   "html/template"
    "libs/getAllCandidatesTwitterData"
@@ -10,10 +10,10 @@ import(
 func runIndex(w http.ResponseWriter, r *http.Request){
   test := getAllCandidatesTwitterData.GetAllCandidatesTwitterData()
   index, err := template.ParseFiles("static/graficos.html")
-  index.execute(w,test)
+  index.Execute(w,test)
 }
 
 func main(){
   http.HandleFunc("/",runIndex)
-  http.ListenAndServer(":80",nil)
+  http.ListenAndServe(":80",nil)
 }
