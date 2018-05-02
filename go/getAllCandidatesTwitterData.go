@@ -32,7 +32,7 @@ func GetAllCandidatesTwitterData() TwitterUser {
 	}
 	defer db.Close()
 	// Execute the query
-	results, err := db.Query("SELECT * FROM twitterDatos")
+	results, err := db.Query("SELECT * FROM twitterData")
 	if err != nil {
 		panic(err.Error()) // proper error handling instead of panic in your app
 	}
