@@ -2,6 +2,7 @@ package getAllCandidatesTwitterData
 
 import (
 	"database/sql"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -19,7 +20,7 @@ type TwitterUser struct {
 	IDTransaccion   []int    `json:"id_transaccion"`
 }
 
-func GetAllCandidatesTwitterData() TwitterUser {
+func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 	// Open up our database connection.
 	connString := "root:D3m0S14y3c@(172.17.2.168:3306)/candidatos"
 	db, err := sql.Open("mysql", connString)
@@ -29,7 +30,7 @@ func GetAllCandidatesTwitterData() TwitterUser {
 	}
 	defer db.Close()
 	// Execute the query
-	results, err := db.Query("SELECT * FROM twitterData")
+	results, err := db.Query("SELECT * FROM twitterData WHERE idCandidatos=?", idCandidato)
 	if err != nil {
 		panic(err.Error()) // proper error handling instead of panic in your app
 	}
@@ -37,22 +38,22 @@ func GetAllCandidatesTwitterData() TwitterUser {
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
 	var resultsTwitterUser TwitterUser
 	for results.Next() {
-		var idtransaccion,idcandidatos,friends,favorites,followers,lists,tweets int
+		var idtransaccion, idcandidatos, friends, favorites, followers, lists, tweets int
 		var fecha string
 		// for each row, scan the result into our tag composite object
-		err = results.Scan(&idtransaccion,&idcandidatos,&friends,&favorites,&followers,&lists,&tweets,&fecha)
+		err = results.Scan(&idtransaccion, &idcandidatos, &friends, &favorites, &followers, &lists, &tweets, &fecha)
 		if err != nil {
 			panic(err.Error()) // proper error handling instead of panic in your app
 		}
-		
-		resultsTwitterUser.IDTransaccion = append(resultsTwitterUser.IDTransaccion,idtransaccion)
-		resultsTwitterUser.IDCandidato = append(resultsTwitterUser.IDCandidato,idcandidatos)
-		resultsTwitterUser.FriendsCount = append(resultsTwitterUser.FriendsCount,friends)
-		resultsTwitterUser.FavouritesCount = append(resultsTwitterUser.FavouritesCount,favorites)
-		resultsTwitterUser.FollowersCount = append(resultsTwitterUser.FollowersCount,followers)
-		resultsTwitterUser.ListCount = append(resultsTwitterUser.ListCount,lists)
-		resultsTwitterUser.NoTweets = append(resultsTwitterUser.NoTweets,tweets)
-		resultsTwitterUser.Date = append(resultsTwitterUser.Date,fecha)
+
+		resultsTwitterUser.IDTransaccion = append(resultsTwitterUser.IDTransaccion, idtransaccion)
+		resultsTwitterUser.IDCandidato = append(resultsTwitterUser.IDCandidato, idcandidatos)
+		resultsTwitterUser.FriendsCount = append(resultsTwitterUser.FriendsCount, friends)
+		resultsTwitterUser.FavouritesCount = append(resultsTwitterUser.FavouritesCount, favorites)
+		resultsTwitterUser.FollowersCount = append(resultsTwitterUser.FollowersCount, followers)
+		resultsTwitterUser.ListCount = append(resultsTwitterUser.ListCount, lists)
+		resultsTwitterUser.NoTweets = append(resultsTwitterUser.NoTweets, tweets)
+		resultsTwitterUser.Date = append(resultsTwitterUser.Date, fecha)
 	}
 	return resultsTwitterUser
 }
