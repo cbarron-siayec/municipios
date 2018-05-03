@@ -86,22 +86,22 @@
       <canvas id="myChart" width="800" height="500"></canvas>
     </div>
 	<script>
-
-var dates ={{range $x := .}}{{index $x.Date 1}}{{end}};
+		{{index .Date 1}}
+var dates =[1,2,3,4,5,6,7,8,9,10]
 // For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
-var AMLO_TWEETS = {{range $y := .}}{{$y.NoTweets}}{{end}};
+var AMLO_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
 var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
 var MEADE_TWEETS = [168,170,178,190,203,276,408,547,675,7];
 var BRONCO_TWEETS = [40,20,10,16,24,38,74,167,508,7];
 var MARGARITA_TWEETS = [6,3,2,2,7,26,82,172,312,4];
 
-var AMLO_FOLLOWERS = {{range $y := .}}{{$y.FollowersCount}}{{end}};
+var AMLO_FOLLOWERS = [282,350,411,502,635,809,947,1302,1700,22];
 var ANAYA_FOLLOWERS = [282,350,411,502,635,809,947,1302,1700,226];
 var MEADE_FOLLOWERS = [168,170,178,190,203,276,408,547,675,73];
 var BRONCO_FOLLOWERS = [40,20,10,16,24,38,74,167,508,78];
 var MARGARITA_FOLLOWERS = [6,3,2,2,7,26,82,172,312,43];
 
-var AMLO_LISTS = {{range $z := .}}{{$z.ListCount}}{{end}};
+var AMLO_LISTS = [282,350,411,502,635,809,947,1302,1700,22];
 var ANAYA_LISTS = [2820,3500,4101,5002,6350,8090,9470,13020,17000,22670];
 var MEADE_LISTS = [1680,1700,1780,1900,2030,2760,4008,5407,6075,73400];
 var BRONCO_LISTS = [400,200,100,160,240,308,740,1670,5080,78400];
@@ -205,7 +205,6 @@ function changeData(pos){
                   var mensaje="Quedan "+dias+" días para la elección"
                   document.getElementById('mensaje').innerHTML = mensaje;
 			</script>
-		{{index .Date 1}}
         </div>
       </div>
     </div>
