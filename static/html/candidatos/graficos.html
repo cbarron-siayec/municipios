@@ -91,8 +91,7 @@
 
 	<script>
         
-		{{.twitterInfo.Date}}
-		{{.twitterInfo.FollowersCount}}
+		
 // For drawing the lines
 var AMLO_TWEETS = [86,114,106,106,107,111,133,221,783,2];
 var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
@@ -210,6 +209,8 @@ function changeData(pos){
                   var mensaje="Quedan "+dias+" días para la elección"
                   document.getElementById('mensaje').innerHTML = mensaje;
 			</script>
+		{{.twitterInfo.Date}}
+		{{.twitterInfo.FollowersCount}}
         </div>
       </div>
     </div>
