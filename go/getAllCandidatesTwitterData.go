@@ -8,13 +8,13 @@ import (
 
 //Structure passed from database
 type TwitterUser struct {
-	FavouritesCount []int    `json:"favourites_count"`
-	FollowersCount  []int    `json:"followers_count"`
-	FriendsCount    []int    `json:"friends_count"`
-	ID              []int    `json:"id"`
+	FavouritesCount []int64  `json:"favourites_count"`
+	FollowersCount  []int64  `json:"followers_count"`
+	FriendsCount    []int64  `json:"friends_count"`
+	ID              []int64  `json:"id"`
 	ScreenName      []string `json:"screen_name"`
-	NoTweets        []int    `json:"tweet_count"`
-	ListCount       []int    `json:"list_count"`
+	NoTweets        []int64  `json:"tweet_count"`
+	ListCount       []int64  `json:"list_count"`
 	IDCandidato     []int    `json:"id_candidato"`
 	Date            []string `json:"fecha"`
 	IDTransaccion   []int    `json:"id_transaccion"`
@@ -38,7 +38,8 @@ func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
 	var resultsTwitterUser TwitterUser
 	for results.Next() {
-		var idtransaccion, idcandidatos, friends, favorites, followers, lists, tweets int
+		var idtransaccion, idcandidatos int
+		var friends, followers, favorites, lists, tweets int64
 		var fecha string
 		// for each row, scan the result into our tag composite object
 		err = results.Scan(&idtransaccion, &idcandidatos, &friends, &favorites, &followers, &lists, &tweets, &fecha)
