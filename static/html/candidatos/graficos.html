@@ -87,6 +87,11 @@
     </div>
 	<script>
 var allDates = [{{range $y, $x := . }}{{ $x.Date }},{{end}}];
+var staging = allDates[3];
+var dates
+for(i=0;i<5;i++){
+	dates[i]=staging[i].substring(1,10)
+}
 var dates = allDates[3];
 // For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
 var AMLO_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
