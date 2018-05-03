@@ -91,7 +91,7 @@
 
 	<script>
         
-		
+var dates = {{.Date}}
 // For drawing the lines
 var AMLO_TWEETS = [86,114,106,106,107,111,133,221,783,2];
 var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
@@ -114,7 +114,7 @@ var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: years,
+            labels: dates,
             datasets: [
               {
                 data: AMLO_FOLLOWERS,
@@ -209,7 +209,6 @@ function changeData(pos){
                   var mensaje="Quedan "+dias+" días para la elección"
                   document.getElementById('mensaje').innerHTML = mensaje;
 			</script>
-		<ul>{{range Date}}<li>{{.Date}}</li>{{end}}</ul>
         </div>
       </div>
     </div>
