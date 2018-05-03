@@ -7,18 +7,25 @@ import (
 	"net/http"
 )
 
+
 func runIndex(w http.ResponseWriter, r *http.Request) {
 	twitterInfoAmlo := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(1)
-	twitterInfoAnaya := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(2)
-	twitterInfoMeade := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(3)
-	twitterInfoMargarita := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(4)
-	twitterInfoBronco := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(5)
+  twitterInfoAnaya := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(2)
+  twitterInfoMeade := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(3)
+  twitterInfoMargarita := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(4)
+  twitterInfoBronco := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(5)
+  condensedRes := []
+  condensedRes = append(condensedRes,twitterInfoAmlo)
+  condensedRes = append(condensedRes,twitterInfoAnaya)
+  condensedRes = append(condensedRes,twitterInfoMeade)
+  condensedRes = append(condensedRes,twitterInfoMargarita)
+  condensedRes = append(condensedRes,twitterInfoBronco)
 
 	index, err := template.ParseFiles("../static/html/candidatos/graficos.html")
 	if err != nil {
 		panic(err.Error())
 	}
-	fmt.Println(index.Execute(w, twitterInfoAmlo, twitterInfoAnaya, twitterInfoMeade, twitterInfoMargarita, twitterInfoBronco))
+	fmt.Println(index.Execute(w, condensedRes))
 }
 
 func main() {
