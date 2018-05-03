@@ -86,7 +86,8 @@
       <canvas id="myChart" width="800" height="500"></canvas>
     </div>
 	<script>
-var dates =[1,2,3,4,5,6,7,8,9,10]
+var allDates = [{{range $y, $x := . }}{{ $x.Date }}{{end}}]
+var dates = allDates[3]
 // For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
 var AMLO_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
 var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
@@ -207,8 +208,5 @@ function changeData(pos){
         </div>
       </div>
     </div>
-	  <h1>
-	  	var datez = [{{range $y, $x := . }}{{ $x.Date }}{{end}}]
-	  </h1>
   </body>
 </html>
