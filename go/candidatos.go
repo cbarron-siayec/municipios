@@ -13,13 +13,12 @@ func runIndex(w http.ResponseWriter, r *http.Request) {
 	twitterInfoMeade := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(3)
 	twitterInfoMargarita := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(4)
 	twitterInfoBronco := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(5)
-	condensedRes := []getAllCandidatesTwitterData.TwitterUser{}
+	condensedRes := []getAllCandidatesTwitterData.GetAllCandidatesTwitterData{}
 	condensedRes = append(condensedRes, twitterInfoAmlo)
 	condensedRes = append(condensedRes, twitterInfoAnaya)
 	condensedRes = append(condensedRes, twitterInfoMeade)
 	condensedRes = append(condensedRes, twitterInfoMargarita)
 	condensedRes = append(condensedRes, twitterInfoBronco)
-	fmt.Println(condensedRes)
 
 	index, err := template.ParseFiles("../static/html/candidatos/graficos.html")
 	if err != nil {

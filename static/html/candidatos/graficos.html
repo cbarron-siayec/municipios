@@ -87,9 +87,9 @@
     </div>
 	<script>
 
-var dates = {{index .Date 0}}
+var dates = {{range $x := .}}{{$x.Dates}}{{end}};
 // For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
-var AMLO_TWEETS = {{index .NoTweets 0}};
+var AMLO_TWEETS = {{range $y := .}}{{$y.NoTweets}}{{end}};
 var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
 var MEADE_TWEETS = [168,170,178,190,203,276,408,547,675,7];
 var BRONCO_TWEETS = [40,20,10,16,24,38,74,167,508,7];
