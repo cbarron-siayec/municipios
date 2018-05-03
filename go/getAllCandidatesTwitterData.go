@@ -38,7 +38,8 @@ func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
 	var resultsTwitterUser TwitterUser
 	for results.Next() {
-		var idtransaccion, idcandidatos, friends, favorites, followers, lists, tweets int
+		var idtransaccion, idcandidatos, friends, followers, lists, tweets int
+		var favorites int64
 		var fecha string
 		// for each row, scan the result into our tag composite object
 		err = results.Scan(&idtransaccion, &idcandidatos, &friends, &favorites, &followers, &lists, &tweets, &fecha)
