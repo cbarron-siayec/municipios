@@ -86,7 +86,7 @@
       <canvas id="myChart" width="800" height="500"></canvas>
     </div>
 	<script>
-var allDates = [{{range $y, $x := . }}{{ $x.Date }}{{end}}];
+var allDates = [{{range $y, $x := . }}{{ $x.Date }},{{end}}];
 var staging = allDates[1];
 var length = staging.length;
 var dates;
