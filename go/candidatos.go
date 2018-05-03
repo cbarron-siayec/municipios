@@ -19,7 +19,7 @@ func runIndex(w http.ResponseWriter, r *http.Request) {
 	condensedRes = append(condensedRes, twitterInfoMeade)
 	condensedRes = append(condensedRes, twitterInfoMargarita)
 	condensedRes = append(condensedRes, twitterInfoBronco)
-	fmt.Println(condensedRes[0].Date)
+	fmt.Println(condensedRes.Date)
 
 	index, err := template.ParseFiles("../static/html/candidatos/graficos.html")
 	if err != nil {
