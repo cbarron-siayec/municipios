@@ -88,9 +88,9 @@
 	<script>
 var allDates = [{{range $y, $x := . }}{{ $x.Date }},{{end}}];
 var staging = allDates[3];
-var dates
+var dates[];
 for(i=0;i<5;i++){
-	dates[i]=staging[i].substring(1,10)
+	dates[i]=staging[i].substring(1,10);
 }
 var dates = allDates[3];
 // For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
