@@ -85,27 +85,23 @@
 
       <canvas id="myChart" width="800" height="500"></canvas>
     </div>
-
-
-
-
 	<script>
-        
+
 var dates = {{.Date}}
-// For drawing the lines
-var AMLO_TWEETS = [86,114,106,106,107,111,133,221,783,2];
+// For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
+var AMLO_TWEETS = {{.NoTweets}};
 var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
 var MEADE_TWEETS = [168,170,178,190,203,276,408,547,675,7];
 var BRONCO_TWEETS = [40,20,10,16,24,38,74,167,508,7];
 var MARGARITA_TWEETS = [6,3,2,2,7,26,82,172,312,4];
 
-var AMLO_FOLLOWERS = [86,114,106,106,107,111,133,221,783,245];
+var AMLO_FOLLOWERS = {{.FollowersCount}};
 var ANAYA_FOLLOWERS = [282,350,411,502,635,809,947,1302,1700,226];
 var MEADE_FOLLOWERS = [168,170,178,190,203,276,408,547,675,73];
 var BRONCO_FOLLOWERS = [40,20,10,16,24,38,74,167,508,78];
 var MARGARITA_FOLLOWERS = [6,3,2,2,7,26,82,172,312,43];
-        
-var AMLO_LISTS = [860,1104,1060,1060,1070,1110,1330,2210,7830,2470];
+
+var AMLO_LISTS = {{.ListCount}};
 var ANAYA_LISTS = [2820,3500,4101,5002,6350,8090,9470,13020,17000,22670];
 var MEADE_LISTS = [1680,1700,1780,1900,2030,2760,4008,5407,6075,73400];
 var BRONCO_LISTS = [400,200,100,160,240,308,740,1670,5080,78400];
@@ -149,13 +145,13 @@ var ctx = document.getElementById("myChart");
             ]
           }
         });
-        
+
 
 function changeData(pos){
     switch(pos){
         case 1:
         myChart.data.datasets[0].data=AMLO_FOLLOWERS;
-        myChart.data.datasets[1].data=ANAYA_FOLLOWERS;  
+        myChart.data.datasets[1].data=ANAYA_FOLLOWERS;
         myChart.data.datasets[2].data=MEADE_FOLLOWERS;
         myChart.data.datasets[3].data=BRONCO_FOLLOWERS;
         myChart.data.datasets[4].data=MARGARITA_FOLLOWERS;
@@ -163,7 +159,7 @@ function changeData(pos){
         break;
         case 2:
         myChart.data.datasets[0].data=AMLO_LISTS;
-        myChart.data.datasets[1].data=ANAYA_LISTS;  
+        myChart.data.datasets[1].data=ANAYA_LISTS;
         myChart.data.datasets[2].data=MEADE_LISTS;
         myChart.data.datasets[3].data=BRONCO_LISTS;
         myChart.data.datasets[4].data=MARGARITA_LISTS;
@@ -171,7 +167,7 @@ function changeData(pos){
         break;
         case 3:
         myChart.data.datasets[0].data=AMLO_TWEETS;
-        myChart.data.datasets[1].data=ANAYA_TWEETS;  
+        myChart.data.datasets[1].data=ANAYA_TWEETS;
         myChart.data.datasets[2].data=MEADE_TWEETS;
         myChart.data.datasets[3].data=BRONCO_TWEETS;
         myChart.data.datasets[4].data=MARGARITA_TWEETS;
