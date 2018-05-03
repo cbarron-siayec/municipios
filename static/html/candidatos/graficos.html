@@ -91,14 +91,15 @@ var staging = allDates[1];
 var length = staging.length;
 var dates = [];
 for(i=0;i<length;i++){
-	dates.push(staging[i].substring(1,10));
+	dates.push(staging[i].substring(0,10));
 }
 // For drawing the linesFavouritesCount []float64 `json:"favourites_count"`
-var AMLO_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
-var ANAYA_TWEETS = [282,350,411,502,635,809,947,1302,1700,22];
-var MEADE_TWEETS = [168,170,178,190,203,276,408,547,675,7];
-var BRONCO_TWEETS = [40,20,10,16,24,38,74,167,508,7];
-var MARGARITA_TWEETS = [6,3,2,2,7,26,82,172,312,4];
+var TWEETS_ALL_CANDIDATES = [{{range $y, $x := . }}{{ $x.NoTweets }},{{end}},];
+var AMLO_TWEETS = TWEETS_ALL_CANDIDATES[0];
+var ANAYA_TWEETS = TWEETS_ALL_CANDIDATES[1];
+var MEADE_TWEETS = TWEETS_ALL_CANDIDATES[2];
+var BRONCO_TWEETS = TWEETS_ALL_CANDIDATES[3];
+var MARGARITA_TWEETS = TWEETS_ALL_CANDIDATES[4];
 
 var AMLO_FOLLOWERS = [282,350,411,502,635,809,947,1302,1700,22];
 var ANAYA_FOLLOWERS = [282,350,411,502,635,809,947,1302,1700,226];
