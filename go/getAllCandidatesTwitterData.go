@@ -11,7 +11,7 @@ type TwitterUser struct {
 	FavouritesCount []int    `json:"favourites_count"`
 	FollowersCount  []int    `json:"followers_count"`
 	FriendsCount    []int    `json:"friends_count"`
-	ID              []int64  `json:"id"`
+	ID              []int    `json:"id"`
 	ScreenName      []string `json:"screen_name"`
 	NoTweets        []int    `json:"tweet_count"`
 	ListCount       []int    `json:"list_count"`
@@ -38,8 +38,7 @@ func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 	// NOMBRES ESTRUCTURA USER: IDCandidato,FriendsCount,FavouritesCount,FollowersCount,ListCount,NoTweets
 	var resultsTwitterUser TwitterUser
 	for results.Next() {
-		var idtransaccion, idcandidatos, friends, followers, lists, tweets int
-		var favorites int64
+		var idtransaccion, idcandidatos, friends, favorites, followers, lists, tweets int
 		var fecha string
 		// for each row, scan the result into our tag composite object
 		err = results.Scan(&idtransaccion, &idcandidatos, &friends, &favorites, &followers, &lists, &tweets, &fecha)
@@ -50,6 +49,7 @@ func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 		resultsTwitterUser.IDTransaccion = append(resultsTwitterUser.IDTransaccion, idtransaccion)
 		resultsTwitterUser.IDCandidato = append(resultsTwitterUser.IDCandidato, idcandidatos)
 		resultsTwitterUser.FriendsCount = append(resultsTwitterUser.FriendsCount, friends)
+		resultsTwitterUser.FavouritesCount = append(resultsTwitterUser.FavouritesCount, favorites)
 		resultsTwitterUser.FollowersCount = append(resultsTwitterUser.FollowersCount, followers)
 		resultsTwitterUser.ListCount = append(resultsTwitterUser.ListCount, lists)
 		resultsTwitterUser.NoTweets = append(resultsTwitterUser.NoTweets, tweets)
