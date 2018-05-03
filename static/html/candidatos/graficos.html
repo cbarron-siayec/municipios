@@ -207,8 +207,8 @@ function changeData(pos){
         </div>
       </div>
     </div>
-	  <h1>	var candidato[][]
-	  	{{range $y, $x := . }}var{{$x}}={{ $x.IDCandidato }}{{end}}
+	  <h1>
+	  	var datez = [{{range $y, $x := . }}{{ $x.IDCandidato }}{{end}}]
 	  </h1>
   </body>
 </html>
