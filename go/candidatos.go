@@ -13,7 +13,7 @@ func runIndex(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err.Error())
 	}
-	fmt.Println(index.Execute(w, twitterInfo))
+	fmt.Println(index.Execute(w, twitterInfoAmlo))
 }
 
 func main() {
