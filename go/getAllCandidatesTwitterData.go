@@ -49,7 +49,6 @@ func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 		resultsTwitterUser.IDTransaccion = append(resultsTwitterUser.IDTransaccion, idtransaccion)
 		resultsTwitterUser.IDCandidato = append(resultsTwitterUser.IDCandidato, idcandidatos)
 		resultsTwitterUser.FriendsCount = append(resultsTwitterUser.FriendsCount, friends)
-		resultsTwitterUser.FavouritesCount = append(resultsTwitterUser.FavouritesCount, favorites)
 		resultsTwitterUser.FollowersCount = append(resultsTwitterUser.FollowersCount, followers)
 		resultsTwitterUser.ListCount = append(resultsTwitterUser.ListCount, lists)
 		resultsTwitterUser.NoTweets = append(resultsTwitterUser.NoTweets, tweets)
