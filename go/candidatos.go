@@ -13,7 +13,7 @@ func runIndex(w http.ResponseWriter, r *http.Request) {
 	twitterInfoMeade := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(3)
 	twitterInfoMargarita := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(4)
 	twitterInfoBronco := getAllCandidatesTwitterData.GetAllCandidatesTwitterData(5)
-	var condensedRes []GetAllCandidatesTwitterData{}
+	condensedRes := []GetAllCandidatesTwitterData{}
 	condensedRes = append(condensedRes, twitterInfoAmlo)
 	condensedRes = append(condensedRes, twitterInfoAnaya)
 	condensedRes = append(condensedRes, twitterInfoMeade)
