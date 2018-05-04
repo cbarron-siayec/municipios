@@ -8,7 +8,6 @@ import(
 
 func sum(a int, b int) int{
   var c int
-  d := a + b
   c = a + b
   return c
 }
