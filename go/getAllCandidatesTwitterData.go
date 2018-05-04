@@ -22,7 +22,7 @@ type TwitterUser struct {
 
 func GetAllCandidatesTwitterData(idCandidato int) TwitterUser {
 	// Open up our database connection.
-	connString := "root:D3m0S14y3c@(172.17.2.168:3306)/candidatos"
+	connString := "root:D3m0S14y3c@(127.0.0.1:3306)/candidatos"
 	db, err := sql.Open("mysql", connString)
 	// if there is an error opening the connection, handle it
 	if err != nil {
