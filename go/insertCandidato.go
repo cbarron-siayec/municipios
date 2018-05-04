@@ -7,7 +7,7 @@ import (
 )
 
 func InsertCandidato(idCandidato int,friends int, favorites int, followers int, lists int, tweets int){
-        connString := "root:D3m0S14y3c@(172.17.2.168:3306)/candidatos"
+        connString := "root:D3m0S14y3c@(127.0.0.1:3306)/candidatos"
         db, err := sql.Open("mysql", connString)
         if err != nil {
             panic(err.Error())
