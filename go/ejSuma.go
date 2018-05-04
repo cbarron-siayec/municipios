@@ -19,3 +19,22 @@ func main(){
     fmt.Println(suma)
 }
 
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+type personaOficina struct{
+	nombre	 []string
+	apellido []string
+	edad	 []int
+}
+
+
+func main() {
+	saul := personaOficina{nombre:"Saul", apellido:"Zamora", edad:35}
+	saulEdadString := strconv.Itoa(saul.edad)
+	fmt.Println("Nombre: "+saul.nombre+" Apellido: "+saul.apellido+" Edad: "+saulEdadString)
+}
