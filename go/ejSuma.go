@@ -17,5 +17,6 @@ func main(){
 //  getAllCandidateData.GetAllCandidateData(546)
     var suma int
     suma = sum(5,6)
+    fmt.Println(suma)
 }
 
