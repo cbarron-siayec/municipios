@@ -73,6 +73,13 @@ func main() {
 			println("Error on Tweet ID: ")
 			println(interactions[z].ID_Tweet)
 		}
+		id, err := res.LastInsertId()
+		if err != nil {
+			panic(err.Error())
+		}
+		if res != nil {
+			println(id)
+		}
 		for w := 0; w < len(interactions[z].Hashtags); w++ {
 			stmt, err := db.Prepare("INSERT hashtags SET id_tweet=?,hashtag=?")
 			if err != nil {
@@ -86,16 +93,25 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			println(id)
+			if res != nil {
+				println(id)
+			}
 		}
 		for y := 0; y < len(interactions[z].UserMentions); y++ {
 			stmt, err := db.Prepare("INSERT user_mentions SET id_tweet=?,id_user=?,screen_name=?")
 			if err != nil {
 				panic(err.Error())
 			}
-			_ res, err := _ stmt.Exec(interactions[z].ID_Tweet, interactions[z].UserMentions[y].ID, interactions[z].UserMentions[y].ScreenName)
+			res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].UserMentions[y].ID, interactions[z].UserMentions[y].ScreenName)
 			if err != nil {
 				panic(err.Error())
+			}
+			id, err := res.LastInsertId()
+			if err != nil {
+				panic(err.Error())
+			}
+			if res != nil {
+				println(id)
 			}
 		}
 
