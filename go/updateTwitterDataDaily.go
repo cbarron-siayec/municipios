@@ -2,6 +2,7 @@ package main
 
 import (
 	"libs/insertCandidato"
+	"libs/insertTweetwerPerformance"
 	"libs/twitterData"
 )
 
