@@ -97,12 +97,7 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			if res.LastInsertId() == nil {
-				println("No Results")
-			}
-			if res.LastInsertId() =! nil {
-				println("there are results")
-			}
+			println(res.LastInsertId())
 		}
 
 	}
