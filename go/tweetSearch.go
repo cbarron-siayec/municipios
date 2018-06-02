@@ -37,7 +37,7 @@ func main() {
 	httpClient := config.Client(oauth1.NoContext, token)
 	// Twitter client
 	client := twitter.NewClient(httpClient)
-	searchTweets, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{Query: "%40islacozumelmx", Count: 150})
+	searchTweets, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{Query: "%40islacozumelmx", Count: 100, ResultType: "mixed"})
 	interactions := []Interactions{}
 	for i := 0; i < len(searchTweets.Statuses); i++ {
 		n := Interactions{
@@ -76,8 +76,6 @@ func main() {
 			panic(err.Error())
 		}
 		if res != nil {
-			println("Interactions Table Last Id")
-			println(id)
 		}
 		for w := 0; w < len(interactions[z].Hashtags); w++ {
 			stmt, err := db.Prepare("INSERT hashtags SET id_tweet=?,hashtag=?")
@@ -93,8 +91,6 @@ func main() {
 				panic(err.Error())
 			}
 			if res != nil {
-				println("Hashtag Table Last Id")
-				println(id)
 			}
 		}
 		for y := 0; y < len(interactions[z].UserMentions); y++ {
@@ -111,8 +107,6 @@ func main() {
 				panic(err.Error())
 			}
 			if res != nil {
-				println("User Mentions Table Last Id")
-				println(id)
 			}
 		}
 
