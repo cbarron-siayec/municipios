@@ -105,7 +105,7 @@ func main() {
 		}
 		id, err := res.LastInsertId()
 		if err != nil {
-			panic(err.Error())
+			println("error_displaying_last_id")
 		}
 		println(id)
 	}
