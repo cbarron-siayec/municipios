@@ -32,7 +32,6 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
-	fmt.Println("CONNECTED")
 	defer db.Close()
 	// http.Client will automatically authorize Requests
 	httpClient := config.Client(oauth1.NoContext, token)
@@ -75,7 +74,7 @@ func main() {
 		}
 		id, err := res.LastInsertId()
 		if err != nil {
-			panic(err.Error())
+			println("Error getting last id")
 		}
 		if res != nil {
 			println(id)
