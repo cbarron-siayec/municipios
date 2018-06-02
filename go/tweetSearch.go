@@ -97,7 +97,7 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			println(res.LastInsertId())
+			println(res[0].LastInsertId())
 		}
 
 	}
