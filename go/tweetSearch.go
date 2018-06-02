@@ -72,13 +72,20 @@ func main() {
 			println("Error on Tweet ID: ")
 			println(interactions[z].ID_Tweet)
 		}
-		id, err := res.LastInsertId()
+		if err == nil {
+			IdLastId, err := res.LastInsertId()
+			println("Interactions Table Last Id")
+			println(IdLastId)
+			if err != nil {
+				println(err.Error())
+			}
+		}
 		if err != nil {
 			println("Error getting last id")
+			errortext := err.Error()
+			println(errortext)
 		}
-		if res != nil {
-			println(id)
-		}
+
 		for w := 0; w < len(interactions[z].Hashtags); w++ {
 			stmt, err := db.Prepare("INSERT hashtags SET id_tweet=?,hashtag=?")
 			if err != nil {
@@ -93,6 +100,7 @@ func main() {
 				panic(err.Error())
 			}
 			if res != nil {
+				println("Hashtag Table Last Id")
 				println(id)
 			}
 		}
@@ -110,6 +118,7 @@ func main() {
 				panic(err.Error())
 			}
 			if res != nil {
+				println("User Mentions Table Last Id")
 				println(id)
 			}
 		}
