@@ -70,7 +70,8 @@ func main() {
 		}
 		res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].AuthorScreenName, interactions[z].LikeCount, interactions[z].RetweetCount, interactions[z].TweetContent, interactions[z].ReplyToScreename, interactions[z].ReplyToStatusId, interactions[z].Lang, interactions[z].Date)
 		if err != nil {
-			panic(err.Error())
+			println("Error on Tweet ID: ")
+			println(interactions[z].ID_Tweet)
 		}
 		for w := 0; w < len(interactions[z].Hashtags); w++ {
 			stmt, err := db.Prepare("INSERT hashtags SET id_tweet=?,hashtag=?")
