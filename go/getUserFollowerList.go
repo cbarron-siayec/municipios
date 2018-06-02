@@ -33,6 +33,7 @@ func main() {
 		n := FollowersList{ID: followers.Users[i].IDStr, ScreenName: followers.Users[i].ScreenName}
 		followersList = append(followersList, n)
 	}
+
 	for z := 0; z < len(followersList)-1; z++ {
 		stmt, err := db.Prepare("INSERT followers_list SET id_follower=?,screen_name=?")
 		if err != nil {
