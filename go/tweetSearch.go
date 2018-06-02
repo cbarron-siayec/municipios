@@ -93,20 +93,11 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].UserMentions[y].ID, interactions[z].UserMentions[y].ScreenName)
+			_ res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].UserMentions[y].ID, interactions[z].UserMentions[y].ScreenName)
 			if err != nil {
 				panic(err.Error())
 			}
-			id, err := res.LastInsertId()
-			if err != nil {
-				panic(err.Error())
-			}
-			println(id)
 		}
-		id, err := res.LastInsertId()
-		if err != nil {
-			println("error_displaying_last_id")
-		}
-		println(id)
+
 	}
 }
