@@ -100,6 +100,9 @@ func main() {
 			if res == nil {
 				println("No Results")
 			}
+			if res =! nil {
+				println("there are results")
+			}
 		}
 
 	}
