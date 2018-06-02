@@ -75,8 +75,8 @@ func main() {
 		if err != nil {
 			panic(err.Error())
 		}
-		if res != nil {
-		}
+		println("Interactions last ID")
+		println(id)
 		for w := 0; w < len(interactions[z].Hashtags); w++ {
 			stmt, err := db.Prepare("INSERT hashtags SET id_tweet=?,hashtag=?")
 			if err != nil {
@@ -90,8 +90,8 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			if res != nil {
-			}
+			println("Interactions last ID")
+			println(id)
 		}
 		for y := 0; y < len(interactions[z].UserMentions); y++ {
 			stmt, err := db.Prepare("INSERT user_mentions SET id_tweet=?,id_user=?,screen_name=?")
@@ -106,8 +106,8 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			if res != nil {
-			}
+			println("Interactions last ID")
+			println(id)
 		}
 
 	}
