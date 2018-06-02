@@ -63,29 +63,22 @@ func main() {
 		fmt.Println("NO RESPONSE!")
 	}
 	for z := 0; z < len(interactions); z++ {
-		stmt, err := db.Prepare("INSERT interactions SET id_tweet=?,author_screen_name=?,like_count=?,retweet_count=?,reply_to_screename=?,reply_to_status_id=?,lang=?,created_at=?")
+		stmt, err := db.Prepare("INSERT interactions SET id_tweet=?,tweet_content=?,author_screen_name=?,like_count=?,retweet_count=?,reply_to_screename=?,reply_to_status_id=?,lang=?,created_at=?")
 		if err != nil {
 			panic(err.Error())
 		}
-		res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].AuthorScreenName, interactions[z].LikeCount, interactions[z].RetweetCount, interactions[z].ReplyToScreename, interactions[z].ReplyToStatusId, interactions[z].Lang, interactions[z].Date)
+		res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].TweetContent, interactions[z].AuthorScreenName, interactions[z].LikeCount, interactions[z].RetweetCount, interactions[z].ReplyToScreename, interactions[z].ReplyToStatusId, interactions[z].Lang, interactions[z].Date)
 		if err != nil {
-			println("Error on Tweet ID: ")
-			println(interactions[z].ID_Tweet)
+			panic(err.Error())
 		}
-		if err == nil {
-			IdLastId, err := res.LastInsertId()
+		id, err := res.LastInsertId()
+		if err != nil {
+			panic(err.Error())
+		}
+		if res != nil {
 			println("Interactions Table Last Id")
-			println(IdLastId)
-			if err != nil {
-				println(err.Error())
-			}
+			println(id)
 		}
-		if err != nil {
-			println("Error getting last id")
-			errortext := err.Error()
-			println(errortext)
-		}
-
 		for w := 0; w < len(interactions[z].Hashtags); w++ {
 			stmt, err := db.Prepare("INSERT hashtags SET id_tweet=?,hashtag=?")
 			if err != nil {
