@@ -93,9 +93,12 @@ func main() {
 			if err != nil {
 				panic(err.Error())
 			}
-			_ res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].UserMentions[y].ID, interactions[z].UserMentions[y].ScreenName)
+			res, err := stmt.Exec(interactions[z].ID_Tweet, interactions[z].UserMentions[y].ID, interactions[z].UserMentions[y].ScreenName)
 			if err != nil {
 				panic(err.Error())
+			}
+			if res == nil {
+				println("No Results")
 			}
 		}
 
