@@ -64,7 +64,7 @@ func main() {
 		fmt.Println("NO RESPONSE!")
 	}
 	for z := 0; z < len(interactions); z++ {
-		stmt, err := db.Prepare("INSERT interactions SET id_tweet=?,author_screen_name=?,like_count=?,retweet_count=?,tweet_content=?,reply_to_screename=?,reptly_to_status_id=?,lang=?,created_at=?")
+		stmt, err := db.Prepare("INSERT interactions SET id_tweet=?,author_screen_name=?,like_count=?,retweet_count=?,tweet_content=?,reply_to_screename=?,reply_to_status_id=?,lang=?,created_at=?")
 		if err != nil {
 			panic(err.Error())
 		}
