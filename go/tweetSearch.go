@@ -87,7 +87,7 @@ func main() {
 			}
 			println(id)
 		}
-		for y := 0; y < len(interactions[z].Hashtags); y++ {
+		for y := 0; y < len(interactions[z].UserMentions); y++ {
 			stmt, err := db.Prepare("INSERT user_mentions SET id_tweet=?,id_user=?,screen_name=?")
 			if err != nil {
 				panic(err.Error())
