@@ -2,7 +2,7 @@ package main
 
 import (
 	"libs/insertCandidato"
-	"libs/insertTweeterPerformance"
+	"libs/insertTwitterPerformance"
 	"libs/twitterData"
 )
 
@@ -25,6 +25,6 @@ func main() {
 	insertCandidato.InsertCandidato(mz.IDCandidato, mz.FriendsCount, mz.FavouritesCount, mz.FollowersCount, mz.ListCount, mz.NoTweets)
 	//PARA BRONCO
 	insertCandidato.InsertCandidato(bronco.IDCandidato, bronco.FriendsCount, bronco.FavouritesCount, bronco.FollowersCount, bronco.ListCount, bronco.NoTweets)
-	//PARA cozumel
-	insertTweeterPerformance.InsertTweeterPerformance(cozumel.FriendsCount, cozumel.FavouritesCount, cozumel.FollowersCount, cozumel.ListCount, cozumel.NoTweets)
+	//PARA BRONCO
+	insertTwitterPerformance.InsertTwitterPerformance(cozumel.FriendsCount, cozumel.FavouritesCount, cozumel.FollowersCount, cozumel.ListCount, cozumel.NoTweets)
 }
