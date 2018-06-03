@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Crear Usuario</title>
+ <meta charset = "utf-8">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a class="navbar-brand" target="_blank" href="http://grupo-siayec.com.mx/">
+                <img src="../municipios/img/cropped-iconSiayec-180x180.png" alt="Logo SIAYEC" height="30" width="30">
+                </a>
+            </li>
+            <li>
+             <ul class="nav nav-pills" role="tablist">
+                 <li role="presentation"> <a><h4>Sistema de Gestión Indicadores Municipales Benito Juárez</h4></a></li>
+            </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Saul Zamora <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="lista-indicadores">Indicadores</a></li>
+            <li><a href="lista-usuarios">Usuarios</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+<div class="container-fluid">
+    <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Crear Usuario</h3>
+  </div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <form action="/crear-usuario" method="post">
+            <div class="input-group input-group-lg">
+              <input type="email" name="email" id="user" class="form-control" placeholder="Correo Electrónico" aria-describedby="sizing-addon1" required>
+                <span class="input-group-addon glyphicon glyphicon-envelope" id="sizing-addon1"></span>
+            </div>
+              <br>
+            <div class="input-group input-group-lg">
+                <input type="password" onchange="verificarPasswords()" id="password" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon1" required>
+                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+            </div>
+              <br>
+            <div class="input-group input-group-lg">
+              <input type="password" name="password" onchange="verificarPasswords()" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña" aria-describedby="sizing-addon1" required>
+                <span class="input-group-addon" id="sizing-addon1">
+                    <span id="goodPassword" class="glyphicon glyphicon-ok" aria-hidden="true" style="display: none"></span>
+                    <span id="badPassword" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </span>
+            </div>
+              <br>
+               <div class="input-group">
+
+              <input type="text" class="form-control" aria-label="..." value="USUARIO DE ADMINISTRACIÓN" disabled>
+              <span class="input-group-addon">
+                <input type="checkbox" name="isAdmin" aria-label="...">
+              </span>
+            </div><br>
+                  <div style="float: right;" class="btn-group btn-group-xs" role="group" aria-label="...">
+                      <input type="submit" id="submitButton" value="Crear Usuario">
+                  </div>
+                </form>
+          </div>
+          <div class="col-md-3"></div>
+      </div>
+  </div>
+</div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <div class="embed-responsive embed-responsive-4by3">
+                <iframe class="embed-responsive-item" src="../municipios/img/delegacion_benito_juarez_logo.png"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+ </body>
+    <div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </div>
+    <script>
+
+        function verificarPasswords (){
+            password = document.getElementById("password").value;
+            confirmPassword = document.getElementById("confirmPassword").value;
+            goodPassword = document.getElementById("goodPassword");
+            badPassword = document.getElementById("badPassword");
+            submitButton = document.getElementById("submitButton");
+            if(password==confirmPassword && password != ""){
+               goodPassword.style.display = "block";
+               badPassword.style.display = "none";
+               submitButton.style.display = "block";
+               }
+            else{
+                goodPassword.style.display = "none";
+               badPassword.style.display = "block";
+               submitButton.style.display = "none";
+            }
+        }
+
+    </script>
+</html>
