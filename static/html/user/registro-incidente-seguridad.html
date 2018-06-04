@@ -56,6 +56,7 @@
                     <h3 style="text-decoration: underline;">Datos del Denunciante</h3>
                     {{ range $i, $j := .SubtiposIncidentesPoliciacos}}
                     {{ $j }}
+                    {{ index $.SubtiposIncidentesPoliciacosID $i}}
                     {{ end }}
                 <div class="input-group input-group-lg">
                   <h3>Incidente Seguridad</h3>
