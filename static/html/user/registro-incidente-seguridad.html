@@ -65,60 +65,57 @@
                 <div class="input-group input-group-lg">
                     <h3>Género</h3>
                   <select>
-                      <option>Hombre</option>
-                      <option>Mujer</option>
+                    {{ range $i, $j := .Genero}}
+                    <option value="{{ index $.GeneroID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Entidad Federativa</h3>
                   <select>
-                      <option>Estado A</option>
-                      <option>Estado B</option>
-                      <option>Estado C</option>
+                    {{ range $i, $j := .EntidadFederativa}}
+                    <option value="{{ index $.EntidadFederativaID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Colonia</h3>
                   <select>
-                      <option>Colonia A</option>
-                      <option>Colonia B</option>
-                      <option>Colonia C</option>
+                    {{ range $i, $j := .Colonia}}
+                    <option value="{{ index $.ColoniaID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Ocupación</h3>
                   <select>
-                      <option>Ocupación A</option>
-                      <option>Ocupación B</option>
-                      <option>Ocupación C</option>
-                      <option>Colonia D</option>
+                    {{ range $i, $j := .Ocupacion}}
+                    <option value="{{ index $.OcupacionID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Ocupación</h3>
                   <select>
-                      <option>scolaridad</option>
-                      <option>Escolaridad</option>
-                      <option>Escolaridad</option>
-                      <option>Escolaridad</option>
+                    {{ range $i, $j := .Escolaridad}}
+                    <option value="{{ index $.EscolaridadID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Nacionalidad</h3>
                   <select>
-                      <option>Nacionalidad A</option>
-                      <option>Nacionalidad B</option>
-                      <option>Nacionalidad C</option>
-                      <option>Nacionalidad D</option>
+                    {{ range $i, $j := .Pais}}
+                    <option value="{{ index $.PaisID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Cordinación Territorial</h3>
                   <select>
-                      <option> A</option>
-                      <option>B</option>
-                      <option> C</option>
-                      <option> D</option>
+                    {{ range $i, $j := .CordinacionTerritorial}}
+                    <option value="{{ index $.CordinacionTerritorialID $i}}">{{ $j }}</option>
+                    {{end}}
                   </select>
                 </div>
                 <div class="input-group input-group-lg">
