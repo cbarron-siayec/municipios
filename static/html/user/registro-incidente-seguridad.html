@@ -57,8 +57,9 @@
                 <div class="input-group input-group-lg">
                   <h3>Incidente Seguridad</h3>
                       <select>
-                          <option value=".id">.name</option>
-                          <option>B</option>
+                          {{range $i, j$ := .SubtiposIncidentesPoliciacosID}}
+                          <option value="{{ $j }}">{{index $.SubtiposIncidentesPoliciacos $i}}</option>
+                          {{ end }}
                       </select>
                     </div>
                 <div class="input-group input-group-lg">
