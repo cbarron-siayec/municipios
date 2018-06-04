@@ -54,12 +54,10 @@
                 </div><br>
                 <div class="panel-body">
                     <h3 style="text-decoration: underline;">Datos del Denunciante</h3>
+                    {{.}}
                 <div class="input-group input-group-lg">
                   <h3>Incidente Seguridad</h3>
                       <select>
-                          {{range $i, j$ := .SubtiposIncidentesPoliciacosID}}
-                          <option value="{{ $j }}">{{index $.SubtiposIncidentesPoliciacos $i}}</option>
-                          {{ end }}
                       </select>
                     </div>
                 <div class="input-group input-group-lg">
