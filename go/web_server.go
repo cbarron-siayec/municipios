@@ -199,7 +199,7 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			panic(err.Error())
 		}
-		stmt, err := db.Prepare("INSERT incidentes_seguridad SET id_subtipos_incidentes_policiacos=?,id_genero=?,id_entidad_federativa=?,id_colonia=?,id_ocupacion=?,id_escolaridad=?,id_pais=?,id_cordinacion_territorial=?,edad_victima=?,fecha=?,numero_incidentes=?,")
+		stmt, err := db.Prepare("INSERT incidentes_seguridad SET id_subtipos_incidentes_policiacos=?,id_genero=?,id_entidad_federativa=?,id_colonia=?,id_ocupacion=?,id_escolaridad=?,id_pais=?,id_cordinacion_territorial=?,edad_victima=?,fecha=?,numero_incidentes=?")
 		if err != nil {
 			panic(err.Error())
 		}
