@@ -36,7 +36,7 @@ type IncidenteSeguridadCatalogos struct {
 
 func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		connString := "root:@(127.0.0.1:3306)/municipios"
+		connString := "root:D3m0S14y3c@(127.0.0.1:3306)/municipios"
 		db, err := sql.Open("mysql", connString)
 		defer db.Close()
 		if err != nil {
@@ -201,7 +201,7 @@ func listIndicators(w http.ResponseWriter, r *http.Request) {
 }
 
 func listUsers(w http.ResponseWriter, r *http.Request) {
-	connString := "root:@(127.0.0.1:3306)/usuarios"
+	connString := "root:D3m0S14y3c@(127.0.0.1:3306)/usuarios"
 	db, err := sql.Open("mysql", connString)
 	defer db.Close()
 	if err != nil {
@@ -251,7 +251,7 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 			_ = isAdmin
 		}
 		println(isAdmin)
-		connString := "root:@(127.0.0.1:3306)/usuarios"
+		connString := "root:D3m0S14y3c@(127.0.0.1:3306)/usuarios"
 		db, err := sql.Open("mysql", connString)
 		defer db.Close()
 		if err != nil {
@@ -300,7 +300,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 		t.Execute(w, nil)
 	} else {
 		r.ParseForm()
-		connString := "root:@(127.0.0.1:3306)/usuarios"
+		connString := "root:D3m0S14y3c@(127.0.0.1:3306)/usuarios"
 		db, err := sql.Open("mysql", connString)
 		defer db.Close()
 		if err != nil {
