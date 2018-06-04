@@ -193,7 +193,7 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		idPais := r.Form.Get("pais")
 		idCordinacionTerritorial := r.Form.Get("cordinacion_territorial")
 		edad := r.Form.Get("edad_victima")
-		connString := "root:D3m0S14y3c@(127.0.0.1:3306)/usuarios"
+		connString := "root:D3m0S14y3c@(127.0.0.1:3306)/municipios"
 		db, err := sql.Open("mysql", connString)
 		defer db.Close()
 		if err != nil {
