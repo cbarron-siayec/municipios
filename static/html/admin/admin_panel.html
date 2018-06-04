@@ -4,14 +4,13 @@
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Indicadores</title>
+ <title>Login</title>
  <meta charset = "utf-8">
 </head>
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-
         <ul class="nav nav-tabs">
             <li role="presentation" class="active">
                 <a class="navbar-brand" target="_blank" href="http://grupo-siayec.com.mx/">
@@ -30,10 +29,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Saul Zamora <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="lista-indicadores">Indicadores</a></li>
-            <li><a href="lista-usuarios">Usuarios</a></li>
+            <li><a href="#">Indicadores</a></li>
+            <li><a href="#">Usuarios</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/">Cerrar Sesión</a></li>
+            <li><a href="#">Cerrar Sesión</a></li>
           </ul>
         </li>
       </ul>
@@ -43,63 +42,45 @@
 <div class="container-fluid">
     <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Administración de Indicadores</h3>
+    <h3 class="panel-title">Crear Usuario</h3>
   </div>
   <div class="panel-body">
-         <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Indicador</th>
-                <th>Usuario Asignado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Reporte Violencia</td>
-                <td><a href="/asignar-responsable">Juan Pérez</a></td>
-              </tr>
-              <tr>
-                <td>Evento DIF</td>
-                <td><a href="/asignar-responsable">Pedro Álvarez</a></td>
-              </tr>
-              <tr>
-                <td>Reporte Ciudadano</td>
-                <td><a href="/asignar-responsable">Esteban García</a></td>
-              </tr>
-              <tr>
-                <td>Evenots Organizados</td>
-                <td><a href="/asignar-responsable">Joaquín Sanchez</a></td>
-              </tr>
-              <tr>
-                <td>Terapias Psicológicas</td>
-                <td><a href="/asignar-responsable">Elvira Pérez</a></td>
-              </tr>
-              <tr>
-                <td>Talleres</td>
-                <td><a href="/asignar-responsable">Juan Pérez</a></td>
-              </tr>
-              <tr>
-                <td>Incidentes Seguridad</td>
-                <td><a href="/asignar-responsable">Pedro Sánchez</a></td>
-              </tr>
-              <tr>
-                <td>Gasto Obra Pública</td>
-                <td><a href="/asignar-responsable">Virgilo de la Mora</a></td>
-              </tr>
-              <tr>
-                <td>Infracciones</td>
-                <td><a href="/asignar-responsable">Diego Machuca</a></td>
-              </tr>
-              <tr>
-                <td>Total Pagos Tesorería</td>
-                <td><a href="/asignar-responsable">Ramon Estrada</a></td>
-              </tr>
-              <tr>
-                <td>Horas Capacitación Personal Ayuntamiento</td>
-                <td><a href="/asignar-responsable">Fernando Solis</a></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <form>
+            <div class="input-group input-group-lg">
+              <input type="email" name="email" class="form-control" placeholder="Correo Electrónico" aria-describedby="sizing-addon1" required>
+                <span class="input-group-addon glyphicon glyphicon-envelope" id="sizing-addon1"></span>
+            </div>
+              <br>
+            <div class="input-group input-group-lg">
+                <input type="password" onchange="verificarPasswords()" name="password" id="password" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon1" required>
+                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+            </div>
+              <br>
+            <div class="input-group input-group-lg">
+              <input type="password" onchange="verificarPasswords()" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña" aria-describedby="sizing-addon1" required>
+                <span class="input-group-addon" id="sizing-addon1">
+                    <span id="goodPassword" class="glyphicon glyphicon-ok" aria-hidden="true" style="display: none"></span>
+                    <span id="badPassword" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </span>
+            </div>
+              <br>
+               <div class="input-group">
+
+              <input type="text" class="form-control" aria-label="..." value="USUARIO DE ADMINISTRACIÓN" disabled>
+              <span class="input-group-addon">
+                <input type="checkbox" name"isAdmin" aria-label="...">
+              </span>
+            </div><br>
+                  <div style="float: right;" class="btn-group btn-group-xs" role="group" aria-label="...">
+                      <input type="submit" value="Crear Usuario">
+                  </div>
+                </form>
+          </div>
+          <div class="col-md-3"></div>
+      </div>
   </div>
 </div>
     <div class="row">

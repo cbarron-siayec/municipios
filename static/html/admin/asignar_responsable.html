@@ -4,7 +4,7 @@
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Indicadores</title>
+ <title>Asignar Usuario</title>
  <meta charset = "utf-8">
 </head>
 <body>
@@ -30,8 +30,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Saul Zamora <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="lista-indicadores">Indicadores</a></li>
-            <li><a href="lista-usuarios">Usuarios</a></li>
+            <li><a href="/lista-indicadores">Indicadores</a></li>
+            <li><a href="/lista-usuarios">Usuarios</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/">Cerrar Sesión</a></li>
           </ul>
@@ -43,63 +43,52 @@
 <div class="container-fluid">
     <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Administración de Indicadores</h3>
+    <h3 class="panel-title">Asignar Usuario: Robo de auto</h3>
   </div>
   <div class="panel-body">
          <table class="table table-hover">
             <thead>
               <tr>
-                <th>Indicador</th>
-                <th>Usuario Asignado</th>
+                <th>Usuario</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Reporte Violencia</td>
-                <td><a href="/asignar-responsable">Juan Pérez</a></td>
+                <td><input id="usr1" onchange="calc(1);" type="checkbox" checked>&nbsp;Juan Pérez</td>
               </tr>
               <tr>
-                <td>Evento DIF</td>
-                <td><a href="/asignar-responsable">Pedro Álvarez</a></td>
+                <td><input id="usr2" onchange="calc(2);" type="checkbox">&nbsp;Saúl Zamora</td>
               </tr>
               <tr>
-                <td>Reporte Ciudadano</td>
-                <td><a href="/asignar-responsable">Esteban García</a></td>
+                <td><input id="usr3" onchange="calc(3);" type="checkbox">&nbsp;Miguel García</td>
               </tr>
               <tr>
-                <td>Evenots Organizados</td>
-                <td><a href="/asignar-responsable">Joaquín Sanchez</a></td>
+                <td><input id="usr4" onchange="calc(4);" type="checkbox">&nbsp;Israel Castillo</td>
               </tr>
               <tr>
-                <td>Terapias Psicológicas</td>
-                <td><a href="/asignar-responsable">Elvira Pérez</a></td>
+                <td><input id="usr5" onchange="calc(5);" type="checkbox">&nbsp;Héctor Gonzalez</td>
               </tr>
               <tr>
-                <td>Talleres</td>
-                <td><a href="/asignar-responsable">Juan Pérez</a></td>
+                <td><input id="usr6" onchange="calc(6);" type="checkbox">&nbsp;Marco Reyes</td>
               </tr>
               <tr>
-                <td>Incidentes Seguridad</td>
-                <td><a href="/asignar-responsable">Pedro Sánchez</a></td>
+                <td><input id="usr7" onchange="calc(7);" type="checkbox">&nbsp;Daniel Bolaños</td>
               </tr>
               <tr>
-                <td>Gasto Obra Pública</td>
-                <td><a href="/asignar-responsable">Virgilo de la Mora</a></td>
+                <td><input id="usr8" onchange="calc(8);" type="checkbox">&nbsp;Jorge López</td>
               </tr>
               <tr>
-                <td>Infracciones</td>
-                <td><a href="/asignar-responsable">Diego Machuca</a></td>
+                <td><input id="usr9" onchange="calc(9);" type="checkbox">&nbsp;Antonio González</td>
               </tr>
               <tr>
-                <td>Total Pagos Tesorería</td>
-                <td><a href="/asignar-responsable">Ramon Estrada</a></td>
+                <td><input id="usr10" onchange="calc(10);" type="checkbox">&nbsp;Mónica Ortiz</td>
               </tr>
               <tr>
-                <td>Horas Capacitación Personal Ayuntamiento</td>
-                <td><a href="/asignar-responsable">Fernando Solis</a></td>
+                <td><input id="usr11" onchange="calc(11);" type="checkbox">&nbsp;Karina González</td>
               </tr>
             </tbody>
-          </table>
+          </table><br>
+          <button type="button"><a href="/usuario-asignado">Asignar</a></button>
   </div>
 </div>
     <div class="row">
@@ -128,20 +117,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </div>
     <script>
-
-        function verificarPasswords (){
-            password = document.getElementById("password").value;
-            confirmPassword = document.getElementById("confirmPassword").value;
-            goodPassword = document.getElementById("goodPassword");
-            badPassword = document.getElementById("badPassword");
-            if(password==confirmPassword && password != ""){
-               goodPassword.style.display = "block";
-               badPassword.style.display = "none";
-               }
-            else{
-                goodPassword.style.display = "none";
-               badPassword.style.display = "block";
+        function calc(userId){
+            for(i=1;i<12;i++){
+                var targetUnchek = "usr"+i;
+                document.getElementById(targetUnchek).checked = false;
             }
+            var targetCheck = "usr"+userId;
+            document.getElementById(targetCheck).checked = true;
+
         }
 
     </script>
