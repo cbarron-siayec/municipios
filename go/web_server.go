@@ -193,16 +193,26 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		idPais := r.Form.Get("pais")
 		idCordinacionTerritorial := r.Form.Get("cordinacion_territorial")
 		edad := r.Form.Get("edad_victima")
-		fmt.Println(fecha)
-		fmt.Println(idSubtiposIncidentesPoliciacos)
-		fmt.Println(idGenero)
-		fmt.Println(idEntidadFederativa)
-		fmt.Println(idColonia)
-		fmt.Println(idOcupacion)
-		fmt.Println(idEscolaridad)
-		fmt.Println(idPais)
-		fmt.Println(idCordinacionTerritorial)
-		fmt.Println(edad)
+		connString := "root:D3m0S14y3c@(127.0.0.1:3306)/usuarios"
+		db, err := sql.Open("mysql", connString)
+		defer db.Close()
+		if err != nil {
+			panic(err.Error())
+		}
+		stmt, err := db.Prepare("INSERT incidentes_seguridad SET id_subtipos_incidentes_policiacos=?,id_genero=?,id_entidad_federativa=?,id_colonia=?,id_ocupacion=?,id_escolaridad=?,id_pais=?,id_cordinacion_territorial=?,edad_victima=?,fecha=?,numero_incidentes=?,")
+		if err != nil {
+			panic(err.Error())
+		}
+		res, err := stmt.Exec(idSubtiposIncidentesPoliciacos, idGenero, idEntidadFederativa, idColonia, idOcupacion, idEscolaridad, idPais, idCordinacionTerritorial, edad, fecha, 1)
+		if err != nil {
+			panic(err.Error())
+		}
+		id, err := res.LastInsertId()
+		if err != nil {
+			panic(err.Error())
+		}
+		fmt.Println(id)
+		userPanel(w, nil)
 	}
 }
 func userPanel(w http.ResponseWriter, r *http.Request) {
