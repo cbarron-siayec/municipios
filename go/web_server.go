@@ -192,6 +192,7 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		idEscolaridad := r.Form.Get("escolaridad")
 		idPais := r.Form.Get("pais")
 		idCordinacionTerritorial := r.Form.Get("cordinacion_territorial")
+		edad := r.Form.Get("edad_victima")
 		fmt.Println(fecha)
 		fmt.Println(idSubtiposIncidentesPoliciacos)
 		fmt.Println(idGenero)
@@ -201,6 +202,7 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(idEscolaridad)
 		fmt.Println(idPais)
 		fmt.Println(idCordinacionTerritorial)
+		fmt.Println(edad)
 	}
 }
 func userPanel(w http.ResponseWriter, r *http.Request) {

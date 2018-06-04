@@ -96,7 +96,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Ocupación</h3>
-                  <select name="ocupacion">
+                  <select name="escolaridad">
                     {{ range $i, $j := .Escolaridad}}
                     <option value="{{ index $.EscolaridadID $i}}">{{ $j }}</option>
                     {{end}}
@@ -104,7 +104,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Nacionalidad</h3>
-                  <select name="nacionalidad">
+                  <select name="pais">
                     {{ range $i, $j := .Pais}}
                     <option value="{{ index $.PaisID $i}}">{{ $j }}</option>
                     {{end}}
