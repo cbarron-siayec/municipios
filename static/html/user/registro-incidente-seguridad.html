@@ -43,20 +43,20 @@
     <h3 class="panel-title">Crear Nuevo Registro: Incidente Seguridad</h3>
   </div>
   <div class="panel-body">
-            <form>
+            <form action="/registro-incidente-seguridad" method="post">
                 <div class="input-group input-group-lg">
                   <input type="text" id="denunciante" class="form-control" placeholder="Nombre denunciante" aria-describedby="sizing-addon1" required>
                 </div><br>
 
                 <div class="input-group input-group-lg">
                     <h3>Fecha Siniestro</h3>
-                  <input type="datetime" id="Fecha Siniestro" class="form-control" placeholder="aaaa/mm/dd" aria-describedby="sizing-addon1" required>
+                  <input type="datetime" name="fecha" id="Fecha Siniestro" class="form-control" placeholder="aaaa/mm/dd" aria-describedby="sizing-addon1" required>
                 </div><br>
                 <div class="panel-body">
                     <h3 style="text-decoration: underline;">Datos del Denunciante</h3>
                 <div class="input-group input-group-lg">
                   <h3>Incidente Seguridad</h3>
-                      <select>
+                      <select name="subtipo_incidente_policiaco">
                         {{ range $i, $j := .SubtiposIncidentesPoliciacos}}
                         <option value="{{ index $.SubtiposIncidentesPoliciacosID $i}}">{{ $j }}</option>
                         {{end}}
@@ -64,7 +64,7 @@
                     </div>
                 <div class="input-group input-group-lg">
                     <h3>Género</h3>
-                  <select>
+                  <select name="genero">
                     {{ range $i, $j := .Genero}}
                     <option value="{{ index $.GeneroID $i}}">{{ $j }}</option>
                     {{end}}
@@ -72,7 +72,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Entidad Federativa</h3>
-                  <select>
+                  <select name="entidad_federativa">
                     {{ range $i, $j := .EntidadFederativa}}
                     <option value="{{ index $.EntidadFederativaID $i}}">{{ $j }}</option>
                     {{end}}
@@ -80,7 +80,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Colonia</h3>
-                  <select>
+                  <select name="colonia">
                     {{ range $i, $j := .Colonia}}
                     <option value="{{ index $.ColoniaID $i}}">{{ $j }}</option>
                     {{end}}
@@ -88,7 +88,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Ocupación</h3>
-                  <select>
+                  <select name="ocupacion">
                     {{ range $i, $j := .Ocupacion}}
                     <option value="{{ index $.OcupacionID $i}}">{{ $j }}</option>
                     {{end}}
@@ -96,7 +96,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Ocupación</h3>
-                  <select>
+                  <select name="ocupacion">
                     {{ range $i, $j := .Escolaridad}}
                     <option value="{{ index $.EscolaridadID $i}}">{{ $j }}</option>
                     {{end}}
@@ -104,7 +104,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Nacionalidad</h3>
-                  <select>
+                  <select name="nacionalidad">
                     {{ range $i, $j := .Pais}}
                     <option value="{{ index $.PaisID $i}}">{{ $j }}</option>
                     {{end}}
@@ -112,7 +112,7 @@
                 </div>
                 <div class="input-group input-group-lg">
                     <h3>Cordinación Territorial</h3>
-                  <select>
+                  <select name="cordinacion_territorial">
                     {{ range $i, $j := .CordinacionTerritorial}}
                     <option value="{{ index $.CordinacionTerritorialID $i}}">{{ $j }}</option>
                     {{end}}

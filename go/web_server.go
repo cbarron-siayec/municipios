@@ -183,7 +183,24 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		t.Execute(w, incidentePoliciacoCatalogos)
 	} else {
 		r.ParseForm()
-
+		fecha := r.Form.Get("fecha")
+		idSubtiposIncidentesPoliciacos := r.Form.Get("subtipo_incidente_policiaco")
+		idGenero := r.Form.Get("genero")
+		idEntidadFederativa := r.Form.Get("entidad_federativa")
+		idColonia := r.Form.Get("colonia")
+		idOcupacion := r.Form.Get("ocupacion")
+		idEscolaridad := r.Form.Get("escolaridad")
+		idPais := r.Form.Get("pais")
+		idCordinacionTerritorial := r.Form.Get("cordinacion_territorial")
+		fmt.Println(fecha)
+		fmt.Println(idSubtiposIncidentesPoliciacos)
+		fmt.Println(idGenero)
+		fmt.Println(idEntidadFederativa)
+		fmt.Println(idColonia)
+		fmt.Println(idOcupacion)
+		fmt.Println(idEscolaridad)
+		fmt.Println(idPais)
+		fmt.Println(idCordinacionTerritorial)
 	}
 }
 func userPanel(w http.ResponseWriter, r *http.Request) {
