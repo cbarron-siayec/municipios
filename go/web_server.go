@@ -44,7 +44,7 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		}
 		var incidentePoliciacoCatalogos IncidenteSeguridadCatalogos
 		//SubtiposIncidentesPoliciacos
-		queryS, err := db.Query("SELECT id_subtipos_incidentes_policiacos, subtipos_incidentes_policiacos FROM subtipos_incidentes_policiacos")
+		queryS, err := db.Query("SELECT id_subtipos_incidentes_policiacos, subtipo_incidente_policiaco FROM subtipos_incidentes_policiacos")
 		if err != nil {
 			panic(err.Error())
 		}
@@ -162,6 +162,23 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 			incidentePoliciacoCatalogos.Pais = append(incidentePoliciacoCatalogos.Pais, pais)
 		}
 		//TERMINA Pais
+		//CordinacionTerritorial
+		queryCo, err := db.Query("SELECT id_cordinacion_territorial, cordinacion_territorial FROM cordinacion_territorial")
+		if err != nil {
+			panic(err.Error())
+		}
+		var idCordinacionTerritorial int
+		var cordinacionTerritorial string
+		for queryCo.Next() {
+			// for each row, scan the result into our tag composite object
+			err := queryCo.Scan(&idCordinacionTerritorial, &cordinacionTerritorial)
+			if err != nil {
+				panic(err.Error()) // proper error handling instead of panic in your app
+			}
+			incidentePoliciacoCatalogos.CordinacionTerritorialID = append(incidentePoliciacoCatalogos.CordinacionTerritorialID, idCordinacionTerritorial)
+			incidentePoliciacoCatalogos.CordinacionTerritorial = append(incidentePoliciacoCatalogos.CordinacionTerritorial, cordinacionTerritorial)
+		}
+		//TERMINA CordinacionTerritorial
 		t, _ := template.ParseFiles("../static/html/user/registro-incidente-seguridad.html")
 		t.Execute(w, incidentePoliciacoCatalogos)
 	} else {
