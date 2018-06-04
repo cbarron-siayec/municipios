@@ -44,7 +44,7 @@ func newIncidenteSeguridad(w http.ResponseWriter, r *http.Request) {
 		}
 		var incidentePoliciacoCatalogos IncidenteSeguridadCatalogos
 		//SubtiposIncidentesPoliciacos
-		queryS, err := db.Query("SELECT id_subtipos_incidentes_policiacos, subtipos_incidentes_policiacos FROM subtipos_incidentes_policiacos")
+		queryS, err := db.Query("SELECT id_subtipos_incidentes_policiacos, subtipo_incidente_policiaco FROM subtipos_incidentes_policiacos")
 		if err != nil {
 			panic(err.Error())
 		}
