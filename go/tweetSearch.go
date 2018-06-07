@@ -37,7 +37,7 @@ func main() {
 	httpClient := config.Client(oauth1.NoContext, token)
 	// Twitter client
 	client := twitter.NewClient(httpClient)
-	searchTweets, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{Query: "%40IslaCozumelMX", Count: 100, ResultType: "popular"})
+	searchTweets, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{Query: "%40IslaCozumelMX", Count: 100, ResultType: "mixed"})
 	interactions := []Interactions{}
 	for i := 0; i < len(searchTweets.Statuses); i++ {
 		n := Interactions{
