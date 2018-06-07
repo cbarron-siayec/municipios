@@ -7,7 +7,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func InsertCandidato(name string, volume int64, woeid int64) {
+func InsertTrends(name string, volume int64, woeid int64) {
 	connString := "root:D3m0S14y3c@(127.0.0.1:3306)/municipios"
 	db, err := sql.Open("mysql", connString)
 	if err != nil {
