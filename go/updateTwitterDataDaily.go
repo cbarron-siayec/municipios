@@ -3,6 +3,7 @@ package main
 import (
 	"libs/getTrendsByLocation"
 	"libs/insertCandidato"
+	"libs/insertTrends"
 	"libs/insertTwitterPerformance"
 	"libs/twitterData"
 )
@@ -30,7 +31,7 @@ func main() {
 	//PARA BRONCO
 	insertTwitterPerformance.InsertTwitterPerformance(cozumel.FriendsCount, cozumel.FavouritesCount, cozumel.FollowersCount, cozumel.ListCount, cozumel.NoTweets)
 	//Para Trends
-	for i:= 0; i< len(trends.Woeid) i++{
-			insertTrends.InsertTrends(trends.Name, trends.Volume, trends.Woeid)
+	for i := 0; i < len(trends.Woeid); i++ {
+		insertTrends.InsertTrends(trends.Name, trends.Volume, trends.Woeid)
 	}
 }
